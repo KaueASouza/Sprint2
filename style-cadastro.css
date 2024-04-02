@@ -1,0 +1,137 @@
+body, html {
+    font-family: 'Sora', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: white;
+    font-size: 15px;
+}
+
+h1 {
+    color: white;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bg {
+    background: linear-gradient(to right, #450610, #350000, #1f0000, #000);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#bg canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pai {
+    width: 500px;
+    height: 750px;
+    background-color: transparent ;
+    border: solid 5px ghostwhite;
+    box-shadow: 0px 0px 15px 0px darkgray;
+    border-radius: 25px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 400px;
+    border-radius: 30px;
+}
+
+.login {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field{
+    position: relative;
+    width: 85%;
+}
+
+.input-field input, textarea{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border: 2px solid gray;
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    box-sizing: border-box;
+    
+}
+
+.input-field span{
+    position: absolute;
+    left: 0;
+    padding: 12px;
+    pointer-events: none;
+    font-size: 1em;
+    color: gray;
+    transition: 0.5s;
+}
+
+.input-field input:valid ~ span,
+.input-field input:focus ~ span,
+.input-field textarea:valid ~ span,
+.input-field textarea:focus ~ span{
+    color: darkred;
+    transform: translateX(15px) translateY(-4.5px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: white;
+    letter-spacing: 0.2em;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.input-field input:valid,
+.input-field input:focus,
+.input-field textarea:valid,
+.input-field textarea:focus{
+    border: 2px solid white;
+}
+
+.botao {
+    cursor: pointer;
+    background-color: #404040;
+    color: white;
+    width: 84.5%;
+    height: 55px;
+    border-radius: 15px;
+    transition: background 0.9s;
+}
+
+.botao:hover {
+    background-color: #d4d4d4;
+    color: black;
+    transition: background 0.9s;
+}
