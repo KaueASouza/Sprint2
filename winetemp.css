@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #222;
+    color: white;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #5e2129;
+}
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #5e2129;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin-right: 10px;
+}
+.banner {
+    height: 800px;
+    background-image: url("Vínicola.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner .container {
+    justify-content: flex-end;
+}
+.letra {
+    font-size: 70px;
+}
