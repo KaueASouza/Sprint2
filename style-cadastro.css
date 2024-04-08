@@ -17,7 +17,7 @@ p {
 }
 
 h1 {
-    color: white;
+    color: whitesmoke;
 }
 
 a {
@@ -79,14 +79,13 @@ a {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
-    border: 2px solid gray;
+    border: 2px solid white;
     background: transparent;
     border-radius: 5px;
     outline: none;
     color: white;
     font-size: 1em;
     box-sizing: border-box;
-    
 }
 
 .input-field span{
@@ -95,7 +94,7 @@ a {
     padding: 12px;
     pointer-events: none;
     font-size: 1em;
-    color: gray;
+    color: white;
     transition: 0.5s;
 }
 
@@ -103,7 +102,7 @@ a {
 .input-field input:focus ~ span,
 .input-field textarea:valid ~ span,
 .input-field textarea:focus ~ span{
-    color: darkred;
+    color: black;
     transform: translateX(15px) translateY(-4.5px);
     font-size: 0.65em;
     padding: 0 10px;
@@ -117,12 +116,12 @@ a {
 .input-field input:focus,
 .input-field textarea:valid,
 .input-field textarea:focus{
-    border: 2px solid white;
+    border: 2px solid #5c5b5b;
 }
 
 .botao {
     cursor: pointer;
-    background-color: #404040;
+    background-color: #5c5b5b;
     color: white;
     width: 84.5%;
     height: 55px;

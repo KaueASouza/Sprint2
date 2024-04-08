@@ -27,7 +27,7 @@
         <br><br><br>
 
         <div class="input-field">
-            <input type="email" name="E-mail" id="demo_email" required="required" autocomplete="off">
+            <input type="text" name="E-mail" id="demo_email" required="required" autocomplete="off">
             <span>E-mail</span>
         </div>
 
@@ -36,13 +36,16 @@
         <div class="input-field">
             <input type="password" name="Senha" id="demo_senha" required="required" autocomplete="off">
             <span>Senha</span>
-            
-            <br><br>
-
-            <a style="color: blueviolet;" href="">Esqueceu a senha?</a>
-
-            <br><br>
         </div>
+
+        <div class="checkbox">
+            <p>Exibir senha</p>
+            <input type="checkbox" onclick="mostrarsenha()">
+        </div>
+
+        <a style="color: blueviolet;" href="">Esqueceu a senha?</a>
+
+        <br><br>
 
         <button class="botao" onclick="login()">Fazer Login</button>
 
@@ -54,5 +57,18 @@
     </div>
 
 </body>
-
 </html>
+<script>
+
+    function  mostrarsenha() {
+        var temp = document.getElementById("demo_senha")
+
+        if (temp.type === "password") {
+            temp.type = "text"
+        } 
+        else {
+            temp.type = "password";
+        }
+    } 
+
+</script>
