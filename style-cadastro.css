@@ -58,8 +58,9 @@ a {
 }
 
 .img {
-    width: 400px;
-    border-radius: 30px;
+    width: 300px;
+    height: 300px;
+    border-radius: 70px 70px 8px 70px;
 }
 
 .login {
@@ -67,6 +68,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .input-field{
