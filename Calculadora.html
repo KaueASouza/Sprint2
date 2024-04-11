@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="mensagem">
+
+        <b>Calculadora Financeira</b>
+
+        <br><br>
+
+        <p></p>
+
+        <div class="cardMen" id="cardMen">
+
+        </div>
+
+    </div>
+
+    <div class="pai">
+
+        <b>Cálculo</b>
+
+        <br>
+
+        <select id="Vinho" required>
+            <option value="0" disabled selected>Selecione algum vinho</option>
+            <option value="1">Tinto</option>
+            <option value="2">Branco</option>
+            <option value="3">Rosê</option>
+        </select>
+
+        <span>
+            <p>Qual a temperatura?</p>
+        </span>
+        <input type="text" name="temperatura" id="idTemperatura" required="required" autocomplete="off">
+
+        <span>
+            <p>Há quanto tempo está fora da temperatura? (em horas)</p>
+        </span>
+        <input type="text" name="qtdTempo" id="idTempo" required="required" autocomplete="off">
+
+        <span>
+            <p>Quantidade de barris fora do controle:</p>
+        </span>
+        <input type="text" name="qtdBarril" id="idBarril" required="required" autocomplete="off">
+
+        <br>
+
+        <button onclick="calculo()">Calcule</button>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    function calculo() {
+        var vinho = (Vinho.value);
+        var temperatura = Number(idTemperatura.value);
+        var tempo = Number(idTempo.value);
+        var barril = Number(idBarril.value);
+        var totalBarril = barril * 3400;
+
+        var dia = 24;
+        var mes = 30;
+
+        if (vinho == "1") {
+
+            if (temperatura >= 13 && temperatura <= 18) {
+                cardMen.innerHTML = `A temperatura está de acordo e não à nada de prejuízo. Assim seu vinho pode durar de 1 a 2 anos.`
+            }
+            else if (temperatura == 12 || temperatura == 19) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((3600 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 11 || temperatura == 20) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((1796 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 10 || temperatura == 21) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((672 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+
+            }
+            else if (temperatura == 9 || temperatura == 22) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((336 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 8 || temperatura == 23) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((168 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 7 || temperatura == 24) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((96 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 6 || temperatura == 25) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((48 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 5 || temperatura == 26) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((24 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 4 || temperatura == 27) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((12 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 3 || temperatura == 28) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((6 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 2 || temperatura == 29) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar até ${(((3 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+            else if (temperatura == 1 || temperatura == 30) {
+                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ele pode durar ${(((1.1 - tempo) / 30) / 24).toFixed(1)}.<br> 
+                Recomendamos que você ajuste a temperatura entre 13 e 18 graus.<br>
+                Caso contrário você corre o riscos de ter até R$${totalBarril} de prejuízo.`
+            }
+        }
+        else if (vinho == "2") {
+
+            if (temp >= 6 && temp <= 12) {
+                cardMen.innerHTML = `Temperatura de acordo!`
+            } else {
+                cardMen.innerHTML = `Temperatura fora dos conformes!`
+            }
+
+        }
+        else if (vinho == "3") {
+
+            if (temp >= 8 && temp <= 12) {
+                cardMen.innerHTML = `Temperatura de acordo!`
+            } else {
+                cardMen.innerHTML = `Temperatura fora dos conformes!`
+            }
+
+        }
+        else {
+            cardMen.innerHTML = `<h1><b><i><div style="color: red;">Selecione um vinho!`
+        }
+    }
+
+</script>
