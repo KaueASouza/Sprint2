@@ -1,0 +1,10 @@
+h1 {
+    color: white;
+}
+
+body {
+    display:flex; 
+    flex-direction: row; 
+    align-items: center; 
+    background-color: black;
+}
