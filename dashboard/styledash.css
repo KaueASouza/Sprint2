@@ -1,10 +1,92 @@
-h1 {
-    color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-    display:flex; 
-    flex-direction: row; 
-    align-items: center; 
-    background-color: black;
+    background-color: #430009c2;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: #3a0008;
+    padding: 3px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    list-style: none;
+    margin-left: auto;
+}
+
+.navbar li {
+    margin-right: 10px;
+    
+}
+
+h1 {
+    color: #333;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.graficos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-direction: row-reverse;
+}
+
+.grafico1,
+.grafico2 {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    flex: 2; /*Ocupa duas vezes mais o espaço*/
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.grafico3 {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.myChart,
+.myChart2 {
+    width: 100%;
+    height: 100%;
+}
+
+.myChart3 {
+    width: 100%;
+    height: 100%;
+}
+
+.Logo {
+    width: 60px; /* Defina a largura desejada */
+    height: 60px; /* Defina a altura desejada */
+    
+}
+
+a {
+    color: #3a0008;
+    text-decoration: none;
 }

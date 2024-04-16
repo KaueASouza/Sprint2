@@ -10,16 +10,35 @@
 </head>
 <body>
 
-    <div class="menu"></div>
+  <div class="header">
+    <div class="container">
+        <h2><img class="Logo" src="Logo.png" alt="WineTemp"></h2>
+        <ul class="navbar">
+            <li> <a href="Site_institucional\Login.html">Sair</a></li>
+        </ul>
 
-    <h1>Gráficos Gestão De Barris</h1>
-    <div>
-        <canvas id="myChart" style="position: relative; height:35vh; width:35vw"></canvas>
+    </div>
+</div>
+
+   
+    <div class="graficos">
+
+      <div class="grafico1">
+        <canvas class="myChart" id="myChart" ></canvas>
     </div>
 
-    <div>
-      <canvas id="myChart2" style="position: relative; height:35vh; width:35vw"></canvas>
-  </div>
+    <div class="grafico2">
+      <canvas class="myChart2" id="myChart2" ></canvas>
+   </div>
+
+   <div class="grafico3">
+    <canvas class="myChart3" id="myChart3" ></canvas>
+ </div>
+
+    </div>
+
+  
+    
 
 <script>
   const ctx = document.getElementById('myChart');
@@ -81,6 +100,31 @@
     }
   });
 
+const ctx3 = document.getElementById('myChart3');
+
+const data = {
+  labels: ['Temperatura Elevada', 'Temperatura ok', 'Temperatura abaixo'],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [20, 250, 10],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const config = {
+  type: 'pie',
+  data: data,
+};
+
+new Chart(ctx3, config);
+
+  
+    
   
 </script>
     
