@@ -4,8 +4,19 @@
 -- Cria o banco de dados WineTemp
 create database WineTemp;
 
+drop database WineTemp; 
+
 -- Seleciona o banco de dados WineTemp para uso
 use WineTemp;
+
+-- Cria a tabela 'empresa' para armazenar informações sobre as empresas
+create table empresa(
+idEmpresa int primary key auto_increment,
+    nome varchar(45), -- Nome da empresa
+    cnpj char(14) not null, -- Número do CNPJ da empresa
+    nomefantasia varchar(45), -- Nome fantasia da empresa
+    razao_social varchar(45) -- Razão social da empresa
+);
 
 -- Cria a tabela 'usuario' para armazenar informações sobre os usuários do sistema
 create table usuario(
@@ -18,20 +29,8 @@ create table usuario(
     constraint UsuarioEmpresa foreign key (fkempresa) references empresa (idEmpresa)
     );
     
-
 -- Descreve a estrutura da tabela 'usuario'
 desc usuario;
-
--- Cria a tabela 'empresa' para armazenar informações sobre as empresas
-create table empresa(
-    nome varchar(45), -- Nome da empresa
-    cnpj char(14) not null, -- Número do CNPJ da empresa
-    nomefantasia varchar(45), -- Nome fantasia da empresa
-    razao_social varchar(45) -- Razão social da empresa
-);
-
--- Adiciona uma coluna 'idEmpresa' à tabela 'empresa' para torná-la uma chave primária auto incrementada
-alter table empresa add column idEmpresa int primary key auto_increment;
 
 -- Descreve a estrutura da tabela 'barris_vinho'
 desc empresa;
@@ -41,6 +40,7 @@ create table barris_vinho(
     idbarris_vinho int primary key auto_increment, -- Chave primária auto incrementada para identificar cada barril
     tipo_vinho varchar(45), -- Tipo de vinho armazenado no barril
     capacidade_barril int, -- Capacidade do barril em litros
+	tipoSensor varchar(45), -- Tipo do sensor que será utilizado
     barris_vinhoco varchar(45), -- Código ou identificador do barril
     localizacao_adega varchar(45), -- Localização do barril na adega
     ultima_manutencao varchar (45), -- Data da última manutenção do barril
@@ -60,14 +60,12 @@ create table configuracoes(
 );
 
 -- Cria a tabela 'temperatura_umidade' para armazenar as leituras de temperatura e umidade
-create table sensor(
-    idsensor int primary key auto_increment, -- Chave primária auto incrementada para identificar cada leitura
-    tipoSensor varchar(45), -- Tipo do sensor que será utilizado
-    temperatura decimal (4,2), -- Valor da temperatura
-    umidade float, -- Valor da umidade
-    fkbarris int, -- Chave estrangeira referenciando o barril de vinho associado à leitura
-    constraint TempUmiEmpresa foreign key (fkbarris) references empresa (idEmpresa) -- Restrição de chave estrangeira referenciando a tabela 'empresa'
-);
+-- create table sensor(
+  --  idsensor int primary key auto_increment, -- Chave primária auto incrementada para identificar cada leitura
+   -- temperatura decimal (4,2), -- Valor da temperatura
+   -- umidade float, -- Valor da umidade
+   -- fkbarris int, -- Chave estrangeira referenciando o barril de vinho associado à leitura
+   -- constraint TempUmiEmpresa foreign key (fkbarris) references empresa (idEmpresa) -- Restrição de chave estrangeira referenciando a tabela 'empresa'
 
 create table historico (
 idHistorico int auto_increment,
@@ -76,7 +74,7 @@ constraint pkcomposta_historica primary key (idHistorico, fkSensor),  -- Chave p
 data_hora date, -- Data e hora da leitura
 umidade float, -- Valor da umidade captado no sensor
 temperatura decimal(4.2), -- Valor da temperatura captado no sensor
-constraint SensorHistorico foreign key (fkSensor) references sensor(idsensor) -- Restrição de chave estrangeira referenciando a tabela ''
+constraint SensorHistorico foreign key (fkSensor) references barris_vinho (idbarris_vinho) -- Restrição de chave estrangeira referenciando a tabela ''
 );
 
 
