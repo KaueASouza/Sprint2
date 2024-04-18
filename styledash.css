@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #430009c2;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+a {
+    color: #3a0008;
+    text-decoration: none;
+}
+
+h1 {
+    color: #333;
+    align-items: center;
+    background: red;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: #3a0008;
+    padding: 3px 0;
+
+    width: 60px;
+    height: 100%;
+
+}
+
+.navbar {
+    list-style: none;
+    margin-left: auto;
+}
+
+.navbar li {
+    margin-right: 10px;
+    
+}
+
+.logo {
+    width: 50px; /* Defina a largura desejada */
+    height: 50px; /* Defina a altura desejada */  
+    background-color: red;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.father{
+    width: 100%;
+    height: 100%;
+    background: red;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.child{
+    width: 100%;
+    height: 90%;
+
+    background: purple;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.child-left{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+.child-right{
+    width: 40%;
+    height: 100%;
+    background-color: blue;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-item-1{
+    width: 710px;
+    height: 400px;
+    background: green;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+.card-item-2{
+    width: 600px;
+    height: 350px;
+    background: #333;
+}
+
+.grafico1{
+    width: 100%;
+}
+
+.grafico2{
+    width: 100%;
+}
+
+.grafico3{
+    width: 100%;
+    height: 300px;
+}
+
+.informacao-card{
+    width: 100%;
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-informacao{
+    width: 150px;
+    height: 150px;
+
+    border: 2px solid red;
+    border-radius: 10px;
+}
