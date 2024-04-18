@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: #222;
+    color: white;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: #5e2129;
+    padding: 0 20px;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: auto;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #5f0000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fecb9e; /* Cor ao passar o mouse */
+}
+
+.logo {
+    width: 80px; /* Ajuste conforme necessário */
+    height: auto; /* Manter a proporção */
+    margin-right: 20px;
+}
+
+.banner {
+    height: 500px; /* Altura do banner */
+    background-image: url("imgs/fundo.jpg"); /* URL da imagem de fundo */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o container */
+    background-position: center; /* Centraliza a imagem horizontalmente e verticalmente */
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 50px;
+}
+
+
+.letra {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #5e2129;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h4 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+/* novo css */
+/* Estilos para a seção "Por que Wine Temp?" */
+#por-que-winetemp {
+    background-color: #fafafa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#por-que-winetemp h2 {
+    font-size: 32px;
+    color: #5e2129;
+    margin-bottom: 30px;
+}
+
+#por-que-winetemp .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#por-que-winetemp .card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+#por-que-winetemp .card:hover {
+    transform: translateY(-5px);
+}
+
+#por-que-winetemp .card h4 {
+    font-size: 24px;
+    color: #5e2129;
+    margin-bottom: 20px;
+}
+
+#por-que-winetemp .card p {
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Estilos para a seção "Sobre Nós" */
+#sobre-nos {
+    background-color: #5e2129;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#sobre-nos h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#sobre-nos p {
+    line-height: 1.6;
+}
+
+#sobre-nos .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
