@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="imagex/png" href="Logo.png">
+  <link rel="shortcut icon" type="imagex/png" href="logo-sem-fundo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -17,34 +18,106 @@
   <div class="header">
     <div class="container">
       <div class="logo">
-
+        <h2> <img class="imagem" src="loguinho.png" alt="WineTemp"></h2>
       </div>
       <!-- <h2>  <img class="Logo" src="Logo.png" alt="WineTemp"></h2> -->
       <ul class="navbar">
-        <li> <a href="Site_institucional\Login.html">Sair</a></li>
+        <li>
+          <a href="Site_institucional\Login.html">
+            <i class="bi bi-box-arrow-right"></i>
+          </a>
+        </li>
       </ul>
 
     </div>
   </div>
 
   <div class="father">
-    <h1>Bem Vindo ao DashBoard</h1>
+    <h1>Bem Vindo ao Dashboard</h1>
 
     <div class="child">
       <div class="child-left">
-
+        <div class="campo">
+<!-- 1 -->
+<!-- Umidade -->
         <div class="informacao-card">
-          <div class="item-informacao"></div>
-          <div class="item-informacao"></div>
-          <div class="item-informacao"></div>
+          
+          <div class="item-informacao">
+            <div class="temp">
+              <b>63%</b>
+            </div>
+            <div class="desc1">
+              Umidade Maxima
+            </div>
+          </div>
+<!-- 2 -->
+          <div class="item-informacao">
+          <div class="temp">
+              <b>43%</b>
+            </div>
+            <div class="desc1">
+              Umidade Minima
+            </div>
+          </div>
+<!-- 3 -->
+          <div class="item-informacao">
+            <div class="temp">
+              <b>53%</b>
+            </div>
+            <div class="desc1">
+              Umidade Média
+            </div>
+          </div>
         </div>
+
+        <div class="branco">
+          .
+        </div>
+        <!-- fim -->
+
+<!--Temperatura  -->
+<!-- 1 -->
+        <div class="informacao-card">
+          <div class="item-informacao">
+           <div class="temp">
+              <b>23°C</b>
+            </div>
+            <div class="desc1">
+              Temperatura Maxima
+            </div>
+          </div>
+<!-- 2 -->
+          <div class="item-informacao">
+            <div class="temp">
+              <b>11°C</b>
+            </div>
+            <div class="desc1">
+              Temperatura Minima
+            </div>
+          </div>
+<!-- 3 -->
+          <div class="item-informacao">
+            <div class="temp">
+              <b>17°C</b>
+            </div>
+            <div class="desc1">
+              Temperatura Média
+            </div>
+          </div>
+        </div>
+      </div>
 
         <div class="card-item-1">
           <h2>Geral</h2>
+          <div class="tela">
 
-          <div class="grafico1">
-            <canvas class="myChart" id="myChart"></canvas>
+            <div class="grafico1">
+              <canvas class="myChart" id="myChart"></canvas>
+            </div>
+
+
           </div>
+
 
         </div>
 
@@ -52,50 +125,29 @@
       <div class="child-right">
 
         <div class="card-item-2">
-          <h2>sensor 1</h2>
-          <div class="grafico2">
-            <canvas class="myChart2" id="myChart2"></canvas>
+          <h2>Sensor 1</h2>
+          <div class="tela2">
+            <div class="grafico2">
+              <canvas class="myChart2" id="myChart2"></canvas>
+            </div>
+          </div>
+          <div class="espaco">
+          </div>
+        </div>
+        <div class="card-item-3">
+          <h2>Sensor 2</h2>
+          <div class="tela3">
+            <div class="grafico3">
+              <canvas class="myChart3" id="myChart3"></canvas>
+            </div>
           </div>
 
         </div>
-        <div class="card-item-2">
-          <h2>sensor 2</h2>
-          <div class="grafico3">
-            <canvas class="myChart3" id="myChart3"></canvas>
-          </div>
-        </div>
-  
+
       </div>
     </div>
 
   </div>
-
-
-
-
-
-
-  <!-- <div class="father">
-    <div class="graficos">
-
-      <div class="grafico1">
-        <canvas class="myChart" id="myChart"></canvas>
-      </div>
-
-      <div class="grafico2">
-        <canvas class="myChart2" id="myChart2"></canvas>
-      </div>
-
-      <div class="grafico3">
-        <canvas class="myChart3" id="myChart3"></canvas>
-      </div>
-    </div>
-
-
-  </div> -->
-
-
-
 
   <script>
     const ctx = document.getElementById('myChart');

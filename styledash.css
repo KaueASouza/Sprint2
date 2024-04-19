@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #430009c2;
+    background-color: #ffffff;
     width: 100vw;
     height: 100vh;
 
@@ -21,14 +21,15 @@ a {
 h1 {
     color: #333;
     align-items: center;
-    background: red;
+    /* background: red; */
 }
+
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: rgb(158, 27, 27);
     color: #3a0008;
     padding: 3px 0;
 
@@ -44,13 +45,27 @@ h1 {
 
 .navbar li {
     margin-right: 10px;
-    
+}
+
+
+.imagem{
+    width: 57px;
+    height: 20px;
+    /* border-radius: 50%; */
 }
 
 .logo {
-    width: 50px; /* Defina a largura desejada */
-    height: 50px; /* Defina a altura desejada */  
-    background-color: red;
+    /* width: -50%; Defina a largura desejada */
+    /* height: 10%; Defina a altura desejada */
+    margin-left: 10px;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    margin-right: 10px; 
+    /* border: 10px solid black; */
+    display: flex;
+   
+
+    /* background-color: red;  */
 }
 
 .container {
@@ -67,9 +82,9 @@ h1 {
 }
 
 .father{
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    background: red;
+    background: rgb(255, 255, 255);
 
     display: flex;
     flex-direction: column;
@@ -81,7 +96,7 @@ h1 {
     width: 100%;
     height: 90%;
 
-    background: purple;
+    background: rgb(255, 255, 255);
 
     display: flex;
     justify-content: space-around;
@@ -95,13 +110,13 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
 }
 
 .child-right{
     width: 40%;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
 
     display: flex;
     flex-direction: column;
@@ -110,22 +125,103 @@ h1 {
 }
 
 .card-item-1{
-    width: 710px;
+    width: 690px;
     height: 400px;
-    background: green;
+    background: #3a0008;
+    align-items: center;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color:white ;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* border: 6px solid red; */
+    border-radius: 5px;
+}
+
+.card-item-2{
+    width: 530px;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #3a0008;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color:white ;
+
+    
+
+    border: 6px solid #3a0008;
+    border-radius: 5px;
+}
+
+.card-item-3{
+    width: 530px;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #3a0008;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color:white ;
+
+    
+
+    border: 3px solid #3a0008;
+    border-radius: 5px;
+}
+.tela{
+    width: 690px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    align-items: center;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    border: 2px solid red;
+    border: 10px solid #3a0008;
+    border-radius: 16px;
+}
+.tela2{
+    width: 500px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    align-items: stretch;
+
+
+    flex-direction: column;
+    justify-content: center;
+    display: block;
+
+    border: 6px solid #3a0008;
     border-radius: 10px;
 }
 
-.card-item-2{
-    width: 600px;
-    height: 350px;
-    background: #333;
+.tela3{
+    width: 500px;
+    height: 300px;
+    background: rgb(255, 255, 255);
+    align-items: stretch;
+
+
+    flex-direction: column;
+    justify-content: center;
+    display: block;
+
+    border: 6px solid #3a0008;
+    border-radius: 10px;
 }
 
 .grafico1{
@@ -134,16 +230,43 @@ h1 {
 
 .grafico2{
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* width: 100% 100vw; */
+    height: 190px;
 }
 
 .grafico3{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    height: 300px;
+    height: 190px;
+}
+
+.campo{
+    /* border: blue 3px solid; */
+    width: 600px;
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .informacao-card{
-    width: 100%;
+    width: 500px;
     margin-bottom: 15px;
+    display: flex;
+    border: #3a0008 3px solid;
+    border-radius: 20px;
+    background-color: #3a0008 ;
+
 
     display: flex;
     justify-content: space-around;
@@ -151,8 +274,37 @@ h1 {
 
 .item-informacao{
     width: 150px;
-    height: 150px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* background-color: rgb(255, 255, 255); */
+    align-items: center;
 
-    border: 2px solid red;
+    /* border: 2px solid red; */
     border-radius: 10px;
 }
+
+.temp{
+    font-size: 30px;
+    color: #ffffff;
+    /* align-items: stretch; */
+    justify-content: flex-end;
+    /* border: 2px solid rgb(209, 67, 67); */
+    /* padding: 32px; */
+}
+
+.desc1{
+font-size: 12px;
+color: #ffffff;
+/* border: 2px solid #3a0008; */
+}
+
+.branco{
+    height: 2px;
+    display: flex;
+    /* border:violet 2px solid; */
+    /* padding: 5px 28px 30px 5px; */
+}
+
+
