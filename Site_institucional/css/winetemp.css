@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Source Sans 3', sans-serif;
-    background-color: #222;
+    background-color: #ffffff;
     color: white;
 }
 
@@ -16,7 +16,7 @@ body {
     background-color: white;
     display: flex;
     align-items: center;
-    box-shadow: #5e2129;
+    box-shadow: 0 0 10px rgba(105, 0, 0, 0.322);
     padding: 0 20px;
 }
 
@@ -54,9 +54,7 @@ body {
 
 .banner {
     height: 500px; /* Altura do banner */
-    background-image: url("imgs/fundo.jpg"); /* URL da imagem de fundo */
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o container */
-    background-position: center; /* Centraliza a imagem horizontalmente e verticalmente */
+   
     display: flex;
     align-items: flex-end;
     padding-bottom: 50px;
@@ -66,12 +64,52 @@ body {
 .letra {
     font-size: 70px;
     font-weight: bold;
+    color: #5f0000;
     margin-bottom: 20px;
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
+    
+}
+
+.sobre,
+.container {
+    width: 90%;
+    margin: 1 auto;
+    
+}
+
+.servicos {
+    background-color: #5e2129;
+    color: white;
+    padding: 20px;
+    height: fit-content;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-servicos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #5f0000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(230, 211, 211, 0.418);
+    height: 70%;
+    width: 50%;
+    padding: 40px;
+    margin: 0 20px;
+    transition: transform 0.3s;
+}
+
+.letra-servicos {
+    font-size: 25px;
+    padding-bottom: 10px;
 }
 
 .card {
@@ -113,10 +151,10 @@ body {
     flex: 1;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(97, 0, 0, 0.418);
     padding: 40px;
     margin: 0 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 #por-que-winetemp .card:hover {
@@ -131,7 +169,7 @@ body {
 
 #por-que-winetemp .card p {
     color: #777;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 /* Estilos para a seção "Sobre Nós" */
