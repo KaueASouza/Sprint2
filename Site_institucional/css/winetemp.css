@@ -43,18 +43,22 @@ body {
 }
 
 .navbar a:hover {
-    color: #fecb9e; /* Cor ao passar o mouse */
+    color: #fecb9e;
+    /* Cor ao passar o mouse */
 }
 
 .logo {
-    width: 80px; /* Ajuste conforme necessário */
-    height: auto; /* Manter a proporção */
+    width: 80px;
+    /* Ajuste conforme necessário */
+    height: auto;
+    /* Manter a proporção */
     margin-right: 20px;
 }
 
 .banner {
-    height: 500px; /* Altura do banner */
-   
+    height: 500px;
+    /* Altura do banner */
+
     display: flex;
     align-items: flex-end;
     padding-bottom: 50px;
@@ -71,14 +75,14 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
-    
+
 }
 
 .sobre,
 .container {
     width: 90%;
     margin: 1 auto;
-    
+
 }
 
 .servicos {
@@ -192,4 +196,25 @@ body {
 #sobre-nos .container {
     max-width: 800px;
     margin: 0 auto;
+}
+
+#equipe {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.foto {
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+    /* padding-top: 50px; */
+    padding-right: 30px;
+    /* padding-bottom: 50px; */
+    padding-left: 80px;
+
 }
