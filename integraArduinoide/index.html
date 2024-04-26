@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <link rel="stylesheet" href="styledassreal.css">
     <style>
         canvas {
             -moz-user-select: none;
@@ -17,15 +18,50 @@
 </head>
 
 <body>
-    <div>
-        <h1>Sensor DHT 11 - Umidade</h1>
+  
+    <div class="pai">
+        <div class="header">
+          <img src="logo.png" alt="Logo" class="logo">
+          <div class="container1">
+            <ul class="navbar">
+              <li><a href="">Geral</a></li>
+    
+              <li>|</li>
+              <li><a href="Site_institucional/Login.html">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+
+    <div class="father">
+        <div class="select-estilo" >
+            <select name="" id="select_barril">
+                <option value="1">Barril 1</option>
+                <option value="2">Barril 2</option>
+                <option value="3">Barril 3</option>
+                <option value="4">Barril 4</option>
+                <option value="5">Barril 5</option>
+            </select>
+        </div>
+        
+        <div class="card-item-1">
+              <h2>Umidade - Barril 1</h2>
+              <div class="tela">
         <section style="width:100%">
             <canvas id="dht11Umidade"></canvas>
         </section>
-        <h1>Sensor DHT 11 - Temperatura</h1>
-        <section style="width: 100%;">
-            <canvas id="dht11Temperatura"></canvas>
-        </section>
+        </div>
+        </div>
+
+        <div class="card-item-1">
+            <h2>Temperatura - Barril 1</h2>
+            <div class="tela">
+                <section style="width: 100%;">
+                    <canvas id="dht11Temperatura"></canvas>
+                </section>
+            </div>
+        </div>
+        
+        
     </div>
 
     <script>
@@ -41,8 +77,8 @@
                     datasets: [{
                         label: 'Umidade',
                         type: 'line',
-                        borderColor: ['#45b3e7'],
-                        backgroundColor: ['#89cff0']
+                        borderColor: ['#87CEFA'],
+                        backgroundColor: ['#B0E0E6']
                     }]
                 },
                 options: {
@@ -96,7 +132,7 @@
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Luminosidade'
+                                labelString: 'Umidade'
                             },
                             ticks: {
                                 beginAtZero: true
