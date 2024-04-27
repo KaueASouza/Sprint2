@@ -68,13 +68,18 @@ create table configuracoes(
    -- constraint TempUmiEmpresa foreign key (fkbarris) references empresa (idEmpresa) -- Restrição de chave estrangeira referenciando a tabela 'empresa'
 
 create table historico (
-idHistorico int auto_increment,
-fkSensor int, -- Chave estrangeira refenciando as leitura captadas pelo sensor informado na tabela 'sensor' 
-constraint pkcomposta_historica primary key (idHistorico, fkSensor),  -- Chave primária composta
-data_hora date, -- Data e hora da leitura
+idHistorico int primary key auto_increment,
+ -- fkSensor int, -- Chave estrangeira refenciando as leitura captadas pelo sensor informado na tabela 'sensor' 
+ -- constraint pkcomposta_historica primary key (idHistorico, fkSensor),  -- Chave primária composta
+data_hora datetime default current_timestamp, -- Data e hora da leitura
 umidade float, -- Valor da umidade captado no sensor
-temperatura decimal(4.2), -- Valor da temperatura captado no sensor
-constraint SensorHistorico foreign key (fkSensor) references barris_vinho (idbarris_vinho) -- Restrição de chave estrangeira referenciando a tabela ''
+temperatura float -- Valor da temperatura captado no sensor
+-- constraint SensorHistorico foreign key (fkSensor) references barris_vinho (idbarris_vinho) -- Restrição de chave estrangeira referenciando a tabela ''
 );
+
+drop table historico;
+select * from historico;
+
+
 
 

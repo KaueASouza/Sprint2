@@ -12,17 +12,20 @@
 
 <body>
 
-    <div class="mensagem">
+    <div class="mensagem" id="mensagem">
 
         <b>Calculadora Financeira</b>
 
-        <br><br>
+        <br>
 
-        <p></p>
-
-        <div class="cardMen" id="cardMen">
-
-        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellendus aliquam architecto quam
+            fugiat aspernatur, ipsam quae hic impedit repellat accusantium eaque dolorum nam est itaque quod aperiam
+            nesciunt in! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis qui molestias, a minus esse
+            eum reprehenderit cupiditate incidunt repellendus voluptas odio id illum quisquam doloribus libero officia
+            error, similique enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam porro
+            laudantium maxime sed reprehenderit. Recusandae molestiae eveniet reprehenderit accusamus doloremque ea quam
+            rerum mollitia, voluptate consequatur atque sequi et. Lorem ipsum, dolor sit amet consectetur adipisicing
+            elit. Mollitia facilis, ipsa eius modi error autem reprehenderit doloremque.</p>
 
     </div>
 
@@ -32,31 +35,33 @@
 
         <br>
 
-        <select id="Vinho" required="">
-            <option value="0" disabled="" selected="">Selecione algum vinho</option>
+        <select id="Vinho" required="" class="select">
+            <option value="0" disabled="" selected="">Selecione um vinho</option>
             <option value="Tinto">Tinto</option>
             <option value="Branco">Branco</option>
             <option value="Rosê">Rosê</option>
         </select>
 
-        <span>
-            <p>Qual a temperatura?</p>
-        </span>
-        <input type="text" name="temperatura" id="idTemperatura" required="required" autocomplete="off">
+        <br>
 
-        <span>
-            <p>Há quanto tempo está nessa temperatura? (em horas)</p>
-        </span>
-        <input type="text" name="qtdTempo" id="idTempo" required="required" autocomplete="off">
+        <div class="input-field">
+            <input type="number" name="temperatura" id="idTemperatura" required="required" autocomplete="off">
+            <span>Qual a temperatura?</span>
+        </div>
 
-        <span>
-            <p>Quantidade de barris nessa temperatura:</p>
-        </span>
-        <input type="text" name="qtdBarril" id="idBarril" required="required" autocomplete="off">
+        <div class="input-field">
+            <input type="number" name="qtdTempo" id="idTempo" required="required" autocomplete="off">
+            <span>Tempo fora da temperatura: (em horas)</span>
+        </div>
+
+        <div class="input-field">
+            <input type="number" name="qtdBarril" id="idBarril" required="required" autocomplete="off">
+            <span>Quantidade de barris nessa temperatura:</span>
+        </div>
 
         <br>
 
-        <button onclick="calculo()">Calcule</button>
+        <button class="botao" onclick="calculo()">Calcule</button>
 
     </div>
 
@@ -74,286 +79,287 @@
 
             var resultado = 0;
             var unidade_tempo = "horas";
-            var recomendo =0;
-            var preju =0;
+            var recomendo = 0;
+            var preju = 0;
 
-            if (vinho == "Tinto") {
-
-                if (temperatura >= 13 && temperatura <= 18) {
-                    resultado = `a temperatura está de acordo e não à nada de prejuízo. Assim seu vinho pode durar de 2 a 3 anos.`
-                    unidade_tempo = "";
-                    recomendo =`Recomendamos que você mantenha essa temperatura.`
-                    preju =`Se for mantido nessa temperatura você pode ter um lucro de até R$${totalBarril}.`
-                }
-                else if (temperatura == 12 || temperatura == 19) {
-                    resultado = ` ele pode durar até ${(((3600 - tempo) / 30) / 24).toFixed(1)}`;
-                    unidade_tempo = "meses";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 11 || temperatura == 20) {
-                    resultado = ` ele pode durar até ${(((1800 - tempo) / 30) / 24).toFixed(1)}`;
-                    unidade_tempo = "meses";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 10 || temperatura == 21) {
-                    resultado = ` ele pode durar até ${(((1056 - tempo) / 30) / 24).toFixed(1)}`;
-                    unidade_tempo = "meses";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 9 || temperatura == 22) {
-                    resultado = ` ele pode durar até ${((730 - tempo)/ 24).toFixed(1)}`;
-                    unidade_tempo = "dias";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 8 || temperatura == 23) {
-                    resultado = ` ele pode durar até ${((336 - tempo) /24).toFixed(1)}`;
-                    unidade_tempo = "dias";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 7 || temperatura == 24) {
-                    resultado = ` ele pode durar até ${((168 - tempo)/ 24).toFixed(1)}`;
-                    unidade_tempo = "dias";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 6 || temperatura == 25) {
-                    resultado = ` ele pode durar até ${(96 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 5 || temperatura == 26) {
-                    resultado = ` ele pode durar até ${(48 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-
-                }
-
-                else if (temperatura == 4 || temperatura == 27) {
-                    resultado = ` ele pode durar até ${(24 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 3 || temperatura == 28) {
-                    resultado = ` ele pode durar até ${(12 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 2 || temperatura == 29) {
-                    resultado = ` ele pode durar até ${(6 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura == 1 || temperatura == 30) {
-                    resultado = ` ele pode durar até ${(3 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura <= 0) {
-                    resultado = ` seu vinho infelizmente congelou, assim afetando sua qualidade e sabor`
-                    unidade_tempo = ""
-                    recomendo =``
-                    preju =`Por seu vinho ter congelado você pode ter um prejuízo de até R$${totalBarril}.`
-                }
-
-                else if (temperatura >= 31) {
-                    resultado = ` seu vinho estragou pelo excesso de calor, assim afetando sua qualidade e sabor`
-                    unidade_tempo = ""
-                    recomendo =``
-                    preju =`Por seu vinho ter estragado você pode ter um prejuízo de até R$${totalBarril}.`
-                }
-                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ${resultado} ${unidade_tempo}.<br><br>
-                ${recomendo}<br><br>
-                ${preju}`
+            if (vinho == 0 || temperatura == "" || tempo == "" || barril == "") {
+                alert('Insira os campos coretamente.')
             }
-            else if (vinho == "Branco") {
+            else {
 
-                if (temperatura >= 6 && temperatura <= 12) {
-                    resultado = `a temperatura está de acordo e não à nada de prejuízo. Assim seu vinho pode durar de 1 a 2 anos.`
-                    unidade_tempo = "";
-                    recomendo =`Recomendamos que você mantenha essa temperatura.`
-                    preju =`Se for mantido nessa temperatura você pode ter um lucro de até R$${totalBarril}.`
+                if (vinho == "Tinto") {
 
-                } else if (temperatura == 5 || temperatura == 13) {
-                    resultado = ` ele pode durar até ${(((1800 - tempo) / 30) / 24).toFixed(1)}`;
-                    unidade_tempo = "meses";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    if (temperatura >= 13 && temperatura <= 18) {
+                        resultado = `a temperatura está de acordo e não à nada de prejuízo. Assim seu vinho pode durar de 2 a 3 anos.`
+                        unidade_tempo = "";
+                        recomendo = `Recomendamos que você mantenha essa temperatura.`
+                        preju = `Se for mantido nessa temperatura você pode ter um lucro de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 12 || temperatura == 19) {
+                        resultado = ` ele pode durar até ${(((3600 - tempo) / 30) / 24).toFixed(1)}`;
+                        unidade_tempo = "meses";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
 
-                }
-                else if (temperatura == 4 || temperatura == 14) {
-                    resultado = ` ele pode durar até ${(((1056 - tempo) / 30) / 24).toFixed(1)}`;
-                    unidade_tempo = "meses";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 3 || temperatura == 15) {
-                    resultado = ` ele pode durar até ${((730 - tempo)/ 24).toFixed(1)}`;
-                    unidade_tempo = "dias";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 2 || temperatura == 16) {
-                    resultado = ` ele pode durar até ${((336 - tempo) / 24).toFixed(1)}`;
-                    unidade_tempo = "dias";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 1 || temperatura == 17) {
-                    resultado = ` ele pode durar até ${((168 - tempo)).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 0 || temperatura == 18) {
-                    resultado = ` ele pode durar até ${(96 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == -1 || temperatura == 19) {
-                    resultado = ` ele pode durar até ${(48 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura <= -2) {
-                    resultado = ` seu vinho infelizmente congelou, assim afetando sua qualidade e sabor`
-                    unidade_tempo = ""
-                    recomendo =``
-                    preju =`Por seu vinho ter congelado você pode ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura >= 20 && temperatura <= 24) {
-                    resultado = ` ele pode durar até ${(12 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    else if (temperatura == 11 || temperatura == 20) {
+                        resultado = ` ele pode durar até ${(((1800 - tempo) / 30) / 24).toFixed(1)}`;
+                        unidade_tempo = "meses";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
 
+                    else if (temperatura == 10 || temperatura == 21) {
+                        resultado = ` ele pode durar até ${(((1056 - tempo) / 30) / 24).toFixed(1)}`;
+                        unidade_tempo = "meses";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 9 || temperatura == 22) {
+                        resultado = ` ele pode durar até ${((730 - tempo) / 24).toFixed(1)}`;
+                        unidade_tempo = "dias";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 8 || temperatura == 23) {
+                        resultado = ` ele pode durar até ${((336 - tempo) / 24).toFixed(1)}`;
+                        unidade_tempo = "dias";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 7 || temperatura == 24) {
+                        resultado = ` ele pode durar até ${((168 - tempo) / 24).toFixed(1)}`;
+                        unidade_tempo = "dias";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 6 || temperatura == 25) {
+                        resultado = ` ele pode durar até ${(96 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 5 || temperatura == 26) {
+                        resultado = ` ele pode durar até ${(48 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+
+                    }
+
+                    else if (temperatura == 4 || temperatura == 27) {
+                        resultado = ` ele pode durar até ${(24 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 3 || temperatura == 28) {
+                        resultado = ` ele pode durar até ${(12 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 2 || temperatura == 29) {
+                        resultado = ` ele pode durar até ${(6 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura == 1 || temperatura == 30) {
+                        resultado = ` ele pode durar até ${(3 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 13 e 18 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura <= 0) {
+                        resultado = ` seu vinho infelizmente congelou, assim afetando sua qualidade e sabor`
+                        unidade_tempo = ""
+                        recomendo = ``
+                        preju = `Por seu vinho ter congelado você pode ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    else if (temperatura >= 31) {
+                        resultado = ` seu vinho estragou pelo excesso de calor, assim afetando sua qualidade e sabor`
+                        unidade_tempo = ""
+                        recomendo = ``
+                        preju = `Por seu vinho ter estragado você pode ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    mensagem.innerHTML = `<b>Resultado:</b> <br> Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ${resultado} ${unidade_tempo}.<br><br>
+                ${recomendo}<br><br>
+                ${preju}`
                 }
-                else if (temperatura >= 25) {
-                    resultado = ` seu vinho estragou pelo excesso de calor, assim afetando sua qualidade e sabor`
-                    unidade_tempo = ""
-                    recomendo =``
-                    preju =`Por seu vinho ter estragado você pode ter um prejuízo de até R$${totalBarril}.`
-                }
-                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ${resultado} ${unidade_tempo}.<br><br>
+                else if (vinho == "Branco") {
+
+                    if (temperatura >= 6 && temperatura <= 12) {
+                        resultado = `a temperatura está de acordo e não à nada de prejuízo. Assim seu vinho pode durar de 1 a 2 anos.`
+                        unidade_tempo = "";
+                        recomendo = `Recomendamos que você mantenha essa temperatura.`
+                        preju = `Se for mantido nessa temperatura você pode ter um lucro de até R$${totalBarril}.`
+
+                    } else if (temperatura == 5 || temperatura == 13) {
+                        resultado = ` ele pode durar até ${(((1800 - tempo) / 30) / 24).toFixed(1)}`;
+                        unidade_tempo = "meses";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+
+                    }
+                    else if (temperatura == 4 || temperatura == 14) {
+                        resultado = ` ele pode durar até ${(((1056 - tempo) / 30) / 24).toFixed(1)}`;
+                        unidade_tempo = "meses";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 3 || temperatura == 15) {
+                        resultado = ` ele pode durar até ${((730 - tempo) / 24).toFixed(1)}`;
+                        unidade_tempo = "dias";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 2 || temperatura == 16) {
+                        resultado = ` ele pode durar até ${((336 - tempo) / 24).toFixed(1)}`;
+                        unidade_tempo = "dias";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 1 || temperatura == 17) {
+                        resultado = ` ele pode durar até ${((168 - tempo)).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 0 || temperatura == 18) {
+                        resultado = ` ele pode durar até ${(96 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == -1 || temperatura == 19) {
+                        resultado = ` ele pode durar até ${(48 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura <= -2) {
+                        resultado = ` seu vinho infelizmente congelou, assim afetando sua qualidade e sabor`
+                        unidade_tempo = ""
+                        recomendo = ``
+                        preju = `Por seu vinho ter congelado você pode ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura >= 20 && temperatura <= 24) {
+                        resultado = ` ele pode durar até ${(12 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 6 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+
+                    }
+                    else if (temperatura >= 25) {
+                        resultado = ` seu vinho estragou pelo excesso de calor, assim afetando sua qualidade e sabor`
+                        unidade_tempo = ""
+                        recomendo = ``
+                        preju = `Por seu vinho ter estragado você pode ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    mensagem.innerHTML = `<b>Resultado:</b> <br> Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ${resultado} ${unidade_tempo}.<br><br>
                 ${recomendo}<br><br>
                 ${preju}`
 
-            } else if (vinho == "Rosê") {
+                } else if (vinho == "Rosê") {
 
-                if (temperatura >= 8 && temperatura <= 12) {
-                    resultado = `a temperatura está de acordo e não à nada de prejuízo. Assim seu vinho pode durar de 1 a 2 anos.`
-                    unidade_tempo = "";
-                    recomendo =`Recomendamos que você mantenha essa temperatura.`
-                    preju =`Se for mantido nessa temperatura você pode ter um lucro de até R$${totalBarril}.`
+                    if (temperatura >= 8 && temperatura <= 12) {
+                        resultado = `a temperatura está de acordo e não à nada de prejuízo. Assim seu vinho pode durar de 1 a 2 anos.`
+                        unidade_tempo = "";
+                        recomendo = `Recomendamos que você mantenha essa temperatura.`
+                        preju = `Se for mantido nessa temperatura você pode ter um lucro de até R$${totalBarril}.`
 
-                } else if (temperatura == 7 || temperatura == 13) {
-                    resultado = ` ele pode durar até ${(((1800 - tempo) / 30) / 24).toFixed(1)}`;
-                    unidade_tempo = "meses";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-
-
-                }
-                else if (temperatura == 6 || temperatura == 14) {
-                    resultado = ` ele pode durar até ${(((1056 - tempo) / 30) / 24).toFixed(1)}`;
-                    unidade_tempo = "meses";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 5 || temperatura == 15) {
-                    resultado = ` ele pode durar até ${((730 - tempo) / 24).toFixed(1)}`;
-                    unidade_tempo = "dias";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-
-                }
-                else if (temperatura == 4 || temperatura == 16) {
-                    resultado = ` ele pode durar até ${((336 - tempo)/ 24).toFixed(1)}`;
-                    unidade_tempo = "dias";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 3 || temperatura == 17) {
-                    resultado = ` ele pode durar até ${(168 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 2 || temperatura == 18) {
-                    resultado = ` ele pode durar até ${(96 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-                }
-                else if (temperatura == 1 || temperatura == 19) {
-                    resultado = ` ele pode durar até ${(48 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
-
-                } else if (temperatura == 0 || temperatura == 20) {
-                    resultado = ` ele pode durar até ${(24 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    } else if (temperatura == 7 || temperatura == 13) {
+                        resultado = ` ele pode durar até ${(((1800 - tempo) / 30) / 24).toFixed(1)}`;
+                        unidade_tempo = "meses";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
 
 
-                } else if (temperatura == -1 || temperatura == 20) {
-                    resultado = ` ele pode durar até ${(12 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
-                    preju =`Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 6 || temperatura == 14) {
+                        resultado = ` ele pode durar até ${(((1056 - tempo) / 30) / 24).toFixed(1)}`;
+                        unidade_tempo = "meses";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 5 || temperatura == 15) {
+                        resultado = ` ele pode durar até ${((730 - tempo) / 24).toFixed(1)}`;
+                        unidade_tempo = "dias";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
 
-                } else if (temperatura <= -2) {
-                    resultado = ` seu vinho infelizmente congelou, assim afetando sua qualidade e sabor`
-                    unidade_tempo = ""
-                    recomendo =``
-                    preju =`Por seu vinho ter congelado você pode ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 4 || temperatura == 16) {
+                        resultado = ` ele pode durar até ${((336 - tempo) / 24).toFixed(1)}`;
+                        unidade_tempo = "dias";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 3 || temperatura == 17) {
+                        resultado = ` ele pode durar até ${(168 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 2 || temperatura == 18) {
+                        resultado = ` ele pode durar até ${(96 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
+                    }
+                    else if (temperatura == 1 || temperatura == 19) {
+                        resultado = ` ele pode durar até ${(48 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
 
-                } else if (temperatura >= 21 && temperatura <= 25) {
-                    resultado = ` ele pode durar até ${(3 - tempo).toFixed(1)}`;
-                    unidade_tempo = "horas";
-                    recomendo =`Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                    } else if (temperatura == 0 || temperatura == 20) {
+                        resultado = ` ele pode durar até ${(24 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
 
-                } else if (temperatura >= 26) {
-                    resultado = ` seu vinho estragou pelo excesso de calor, assim afetando sua qualidade e sabor`
-                    unidade_tempo = ""
-                    recomendo =``
-                    preju =`Por seu vinho ter estragado você pode ter um prejuízo de até R$${totalBarril}.`
-                }
 
-                else {
-                    cardMen.innerHTML = `<h1><b><i><div style="color: red;">Selecione um vinho!`
-                }
+                    } else if (temperatura == -1 || temperatura == 20) {
+                        resultado = ` ele pode durar até ${(12 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
 
-                cardMen.innerHTML = `Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ${resultado} ${unidade_tempo}.<br><br>
+                    } else if (temperatura <= -2) {
+                        resultado = ` seu vinho infelizmente congelou, assim afetando sua qualidade e sabor`
+                        unidade_tempo = ""
+                        recomendo = ``
+                        preju = `Por seu vinho ter congelado você pode ter um prejuízo de até R$${totalBarril}.`
+
+                    } else if (temperatura >= 21 && temperatura <= 25) {
+                        resultado = ` ele pode durar até ${(3 - tempo).toFixed(1)}`;
+                        unidade_tempo = "horas";
+                        recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+
+                    } else if (temperatura >= 26) {
+                        resultado = ` seu vinho estragou pelo excesso de calor, assim afetando sua qualidade e sabor`
+                        unidade_tempo = ""
+                        recomendo = ``
+                        preju = `Por seu vinho ter estragado você pode ter um prejuízo de até R$${totalBarril}.`
+                    }
+
+                    mensagem.innerHTML = `<b>Resultado:</b> <br> Com o vinho do tipo ${vinho}, na temperatura de ${temperatura} graus, ${resultado} ${unidade_tempo}.<br><br>
                 ${recomendo}<br><br>
                 ${preju}`
 
-
+                }
             }
         }
     </script>
