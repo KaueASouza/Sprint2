@@ -378,7 +378,9 @@ color: #350000;
 .organizacao {
     padding-left: 15px;
     padding-right: 15px;
-    border: #350000 2px solid;
+    /* border: #350000 2px solid; */
+    /* display: flex;
+    flex-wrap: wrap; */
     
 }
 b {
