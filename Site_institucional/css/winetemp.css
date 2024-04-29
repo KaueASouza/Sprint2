@@ -215,3 +215,9 @@ body {
     padding-right: 30px;
     padding-left: 80px;
 }
+h3{
+    color: #5f0000;
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center;
+}
