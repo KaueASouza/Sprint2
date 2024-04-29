@@ -4,8 +4,6 @@
 -- Cria o banco de dados WineTemp
 create database WineTemp;
 
-drop database WineTemp; 
-
 -- Seleciona o banco de dados WineTemp para uso
 use WineTemp;
 
@@ -59,13 +57,7 @@ create table configuracoes(
     constraint ConfigEmpresa foreign key (fkbarril) references empresa (idEmpresa) -- Restrição de chave estrangeira referenciando a tabela 'empresa'
 );
 
--- Cria a tabela 'temperatura_umidade' para armazenar as leituras de temperatura e umidade
--- create table sensor(
-  --  idsensor int primary key auto_increment, -- Chave primária auto incrementada para identificar cada leitura
-   -- temperatura decimal (4,2), -- Valor da temperatura
-   -- umidade float, -- Valor da umidade
-   -- fkbarris int, -- Chave estrangeira referenciando o barril de vinho associado à leitura
-   -- constraint TempUmiEmpresa foreign key (fkbarris) references empresa (idEmpresa) -- Restrição de chave estrangeira referenciando a tabela 'empresa'
+
 
 create table historico (
 idHistorico int primary key auto_increment,
@@ -83,3 +75,14 @@ select * from historico;
 
 
 
+
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--(TABELA TEMPERATURA E UMIDADE NÃO UTLIZADA PARA O WEB-DATA-VIZ)
+-- Cria a tabela 'temperatura_umidade' para armazenar as leituras de temperatura e umidade
+-- create table sensor(
+  --  idsensor int primary key auto_increment, -- Chave primária auto incrementada para identificar cada leitura
+   -- temperatura decimal (4,2), -- Valor da temperatura
+   -- umidade float, -- Valor da umidade
+   -- fkbarris int, -- Chave estrangeira referenciando o barril de vinho associado à leitura
+   -- constraint TempUmiEmpresa foreign key (fkbarris) references empresa (idEmpresa) -- Restrição de chave estrangeira referenciando a tabela 'empresa'
