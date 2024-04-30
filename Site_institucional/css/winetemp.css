@@ -6,8 +6,12 @@
 
 body {
     font-family: 'Source Sans 3', sans-serif;
-    background-color: #ffffff;
+    background-color: white;
     color: white;
+}
+
+h5 {
+    font-size: 40px;
 }
 
 .header {
@@ -43,7 +47,7 @@ body {
 }
 
 .navbar a:hover {
-    color: #fecb9e;
+    color: #9f160b;
     /* Cor ao passar o mouse */
 }
 
@@ -56,12 +60,10 @@ body {
 }
 
 .banner {
-    height: 500px;
-    /* Altura do banner */
-
     display: flex;
     align-items: flex-end;
-    padding-bottom: 50px;
+    padding: 150px 0px 150px 0px;
+    font-size: 70px;
 }
 
 
@@ -82,13 +84,13 @@ body {
 .container {
     width: 90%;
     margin: 1 auto;
-
 }
+
 
 .servicos {
     background-color: #5e2129;
     color: white;
-    padding: 20px;
+    padding: 50px 0px 50px 0px;
     height: fit-content;
     margin-bottom: 20px;
     display: flex;
@@ -119,8 +121,9 @@ body {
 .card {
     background-color: #5e2129;
     color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 0px 20px 20px 30px;
+    margin: 10px 0px 190px 0px;
+    border-radius: 10px;
 }
 
 .card h4 {
@@ -135,14 +138,10 @@ body {
 /* Estilos para a seção "Por que Wine Temp?" */
 #por-que-winetemp {
     background-color: #fafafa;
-    padding: 50px 0;
-    text-align: center;
-}
-
-#por-que-winetemp h2 {
-    font-size: 32px;
     color: #5e2129;
-    margin-bottom: 30px;
+    padding: 190px 0px 150px 0px;
+    text-align: center;
+    flex-direction: column;
 }
 
 #por-que-winetemp .container {
@@ -198,26 +197,33 @@ body {
     margin: 0 auto;
 }
 
-#equipe {
+.equipe {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    align-content: center;
+    
 }
 
-.foto {
+.equipe2 {
+    width: 80%;
+    background-color: #5e2129;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 15px;
+    margin-bottom: 140px;
     display: flex;
-    flex-flow: row wrap;
-    box-sizing: border-box;
-    align-items: stretch;
-    padding-right: 30px;
-    padding-left: 80px;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
 }
-h3{
-    color: #5f0000;
+
+.body-foto {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
     font-size: 20px;
-    font-weight: 700;
-    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 8px;
 }
+
