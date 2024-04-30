@@ -25,6 +25,10 @@ b {
     font-size: 35px;
 }
 
+h4 {
+    color: #7d0502;
+}
+
 .pai {
     width: 31%;
     background-color: white;
@@ -118,5 +122,7 @@ b {
 }
 
 .botao:hover {
-    background-color: #5d000078;
+    background-color: #7d0502;
+    color: white;
 }
+
