@@ -14,18 +14,14 @@
 
     <div class="mensagem" id="mensagem">
 
-        <b>Calculadora Financeira</b>
+        <b>Bem vindo a nossa calculadora financeira Wine Temp!</b>
 
         <br>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellendus aliquam architecto quam
-            fugiat aspernatur, ipsam quae hic impedit repellat accusantium eaque dolorum nam est itaque quod aperiam
-            nesciunt in! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis qui molestias, a minus esse
-            eum reprehenderit cupiditate incidunt repellendus voluptas odio id illum quisquam doloribus libero officia
-            error, similique enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam porro
-            laudantium maxime sed reprehenderit. Recusandae molestiae eveniet reprehenderit accusamus doloremque ea quam
-            rerum mollitia, voluptate consequatur atque sequi et. Lorem ipsum, dolor sit amet consectetur adipisicing
-            elit. Mollitia facilis, ipsa eius modi error autem reprehenderit doloremque.</p>
+        <p>Nosso objetivo com essa calculadora é mostrar para nosso cliente quanto tempo seu vinho armazenado ainda tem de vida de acordo com sua temperatura.
+        Para podermos calcular a vida útil do seu vinho, solicitamos a temperatura que seu vinho se encontra e a quanto tempo em horas ele se encontra nessa temperatura, de acordo com o tempo que o seu vinho está em determinada temperatura, com alguns cálculos mostramos quanto tempo seu vinho ainda tem de vida útil.
+        Pedimos também a quantidade de barris nessa temperatura, para que possamos calcular uma média de lucro ou de prejuízo que seu vinho armazenado pode gerar. <br><br>
+        <h4>IMPORTANTE CASO O RESULTADO DA VIDA ÚTIL DO SEU VINHO VENHA NEGATIVO SIGNIFICA QUE SEU VINHO ULTRAPASSOU O TEMPO LIMITE DE VIDA, ASSIM ESTRAGANDO SEU VINHO.</h4></p>
 
     </div>
 
@@ -51,7 +47,12 @@
 
         <div class="input-field">
             <input type="number" name="qtdTempo" id="idTempo" required="required" autocomplete="off">
-            <span>Tempo fora da temperatura: (em horas)</span>
+            <span>Tempo de armazenamento: (em horas)</span>
+        </div>
+
+        <div class="input-field">
+            <input type="number" name="preçoBarril" id="idPcBarril" required="required" autocomplete="off">
+            <span>Qual é o preço de seus barris?</span>
         </div>
 
         <div class="input-field">
@@ -75,14 +76,15 @@
             var temperatura = Number(idTemperatura.value);
             var tempo = Number(idTempo.value);
             var barril = Number(idBarril.value);
-            var totalBarril = barril * 3400;
+            var precoBarril = Number(idPcBarril.value);
+            var totalBarril = barril * precoBarril;
 
             var resultado = 0;
             var unidade_tempo = "horas";
             var recomendo = 0;
             var preju = 0;
 
-            if (vinho == 0 || temperatura == "" || tempo == "" || barril == "") {
+            if (vinho == 0 || tempo == "" || barril == "") {
                 alert('Insira os campos coretamente.')
             }
             else {
@@ -347,6 +349,7 @@
                         resultado = ` ele pode durar até ${(3 - tempo).toFixed(1)}`;
                         unidade_tempo = "horas";
                         recomendo = `Recomendamos que você ajuste a temperatura entre 8 e 12 graus.`
+                        preju = `Caso contrário você corre o risco de ter um prejuízo de até R$${totalBarril}.`
 
                     } else if (temperatura >= 26) {
                         resultado = ` seu vinho estragou pelo excesso de calor, assim afetando sua qualidade e sabor`
