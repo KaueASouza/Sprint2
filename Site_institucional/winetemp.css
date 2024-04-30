@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: white;
+    color: white;
+}
+
+h5 {
+    font-size: 40px;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(105, 0, 0, 0.322);
+    padding: 0 20px;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: auto;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #5f0000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #9f160b;
+    /* Cor ao passar o mouse */
+}
+
+.logo {
+    width: 80px;
+    /* Ajuste conforme necessário */
+    height: auto;
+    /* Manter a proporção */
+    margin-right: 20px;
+}
+
+.banner {
+    display: flex;
+    align-items: flex-end;
+    padding: 150px 0px 150px 0px;
+    font-size: 70px;
+}
+
+
+.letra {
+    font-size: 70px;
+    font-weight: bold;
+    color: #5f0000;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.sobre,
+.container {
+    width: 90%;
+    margin: 1 auto;
+}
+
+
+.servicos {
+    background-color: #5e2129;
+    color: white;
+    padding: 50px 0px 50px 0px;
+    height: fit-content;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-servicos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #5f0000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(230, 211, 211, 0.418);
+    height: 70%;
+    width: 50%;
+    padding: 40px;
+    margin: 0 20px;
+    transition: transform 0.3s;
+}
+
+.letra-servicos {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.card {
+    background-color: #5e2129;
+    color: white;
+    padding: 0px 20px 20px 30px;
+    margin: 10px 0px 190px 0px;
+    border-radius: 10px;
+}
+
+.card h4 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+/* novo css */
+/* Estilos para a seção "Por que Wine Temp?" */
+#por-que-winetemp {
+    background-color: #fafafa;
+    color: #5e2129;
+    padding: 190px 0px 150px 0px;
+    text-align: center;
+    flex-direction: column;
+}
+
+#por-que-winetemp .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#por-que-winetemp .card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(97, 0, 0, 0.418);
+    padding: 40px;
+    margin: 0 20px;
+    transition: transform 0.3s;
+}
+
+#por-que-winetemp .card:hover {
+    transform: translateY(-5px);
+}
+
+#por-que-winetemp .card h4 {
+    font-size: 24px;
+    color: #5e2129;
+    margin-bottom: 20px;
+}
+
+#por-que-winetemp .card p {
+    color: #777;
+    line-height: 1.4;
+}
+
+/* Estilos para a seção "Sobre Nós" */
+#sobre-nos {
+    background-color: #5e2129;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#sobre-nos h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#sobre-nos p {
+    line-height: 1.6;
+}
+
+#sobre-nos .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.equipe {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.equipe2 {
+    width: 80%;
+    background-color: #5e2129;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 15px;
+    margin-bottom: 140px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.body-foto {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
+
