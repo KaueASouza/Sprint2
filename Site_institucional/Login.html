@@ -52,7 +52,7 @@
 
     <div class="svg">
 
-        <img src="/Site_institucional/imgs/img.svg" class="img">
+        <img src="imgs/img.svg" class="img">
        
     </div>
 
@@ -70,5 +70,17 @@
             temp.type = "password";
         }
     } 
+
+    function login() {
+
+        var email = demo_email.value
+        var senha = demo_senha.value
+
+        if (email == 'brandao@gmail.com' && senha == 'brandao123') {
+            window.location= "dashboard.html"
+        } else {
+            alert('Senha ou email incorretos.')
+        }
+    }
 
 </script>
