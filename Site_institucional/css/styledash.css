@@ -176,7 +176,7 @@ h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
     color:white ;
-    box-shadow: 8px 8px 8px rgba(105, 0, 0, 0.322);
+  
 
     display: flex;
     flex-direction: column;
@@ -196,7 +196,7 @@ h1 {
     justify-content: space-between;
     background: #3a0008e8;
     margin: 0 0 20px;
-    box-shadow: 8px 8px 8px rgba(105, 0, 0, 0.322);
+   
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
@@ -217,7 +217,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     background: #3a0008e8;
-    box-shadow: 8px 8px 8px rgba(105, 0, 0, 0.322);
+  
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
