@@ -152,3 +152,15 @@ h1 {
 .img {
     width: 80%;
 }
+
+.voltar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 50px 0px 0px 50px;
+}
+
+.img2 {
+    width: 60%;
+    cursor: pointer;
+}
