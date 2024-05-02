@@ -41,7 +41,7 @@
 
                 <div class="item-informacao">
                   <div class="temp">
-                    <b>63%</b>
+                    <b>78%</b>
                   </div>
                   <div class="desc1">
                     Umidade Maxima
@@ -50,21 +50,13 @@
                 <!-- 2 -->
                 <div class="item-informacao">
                   <div class="temp">
-                    <b>43%</b>
+                    <b>55%</b>
                   </div>
                   <div class="desc1">
                     Umidade Minima
                   </div>
                 </div>
                 <!-- 3 -->
-                <div class="item-informacao">
-                  <div class="temp">
-                    <b>53%</b>
-                  </div>
-                  <div class="desc1">
-                    Umidade Média
-                  </div>
-                </div>
               </div>
 
               <div class="branco">
@@ -77,7 +69,7 @@
               <div class="informacao-card">
                 <div class="item-informacao">
                   <div class="temp">
-                    <b>23°C</b>
+                    <b>16°C</b>
                   </div>
                   <div class="desc1">
                     Temperatura Maxima
@@ -86,26 +78,18 @@
                 <!-- 2 -->
                 <div class="item-informacao">
                   <div class="temp">
-                    <b>11°C</b>
+                    <b>8°C</b>
                   </div>
                   <div class="desc1">
                     Temperatura Minima
                   </div>
                 </div>
-                <!-- 3 -->
-                <div class="item-informacao">
-                  <div class="temp">
-                    <b>17°C</b>
-                  </div>
-                  <div class="desc1">
-                    Temperatura Média
-                  </div>
-                </div>
+                <!-- 3 -->  
               </div>
             </div>
 
             <div class="card-item-1">
-              <h2>Geral</h2>
+              <h2>Geral - Setor 1</h2>
               <div class="tela">
 
                 <div class="grafico1">
@@ -122,7 +106,7 @@
           <div class="child-right">
 
             <div class="card-item-2">
-              <h2>Sensor 1</h2>
+              <h2>⚠️ Barril E ⚠️</h2>
               <div class="tela2">
                 <div class="grafico2">
                   <canvas class="myChart2" id="myChart2"></canvas>
@@ -137,19 +121,22 @@
                   <div class="alerta">
                     <div class="organizacao">
                       <div class="temp">
-                        <b>10 Barris </b>
+                        <b>1 Barril </b>
                     </div>
+                   <center>
                     <div class="desc1">
-                        Temperatura Abaixo
-                    </div>
+                      Em alerta
+                  </div>
+                   </center>
                     </div>
                       <div class="organizacao">
                         <div class="temp">
-                          <b>20 Barris </b>
-                      </div>
+                          <center><b>5 Barris</b></center>
+                        </div>
                       <div class="desc1">
-                          Temperatura Elevada
+                          Temperatura adequada
                       </div>
+                  
                         
                       </div>
                   </div>
@@ -169,17 +156,17 @@
   </div>
 
   <script>
-    alert('Barril A está com a temperatura elevada. Risco de perda de vinho!')
+    alert('Barril E está com a temperatura elevada. Risco de perda de vinho!')
 
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        labels: ['Barril A', 'Barril B', 'Barril C', 'Barril D', 'Barril E', 'Barril F'],
         datasets: [{
           label: 'Temperatura Média',
-          data: [22, 24, 27, 23, 20, 18],
+          data: [16, 14, 14, 15, 8, 16],
           borderWidth: 1,
          // borderColor: '#DEB887',
       backgroundColor: '#AE1C1F'
@@ -188,7 +175,7 @@
 
         {
           label: 'Umidade Média',
-          data: [90, 89, 93, 87, 88, 82],
+          data: [55, 62, 60, 62, 78, 65],
           borderWidth: 1,
         //  borderColor: '#B0E0E6',
       backgroundColor: '#F2CD7C'
@@ -213,16 +200,16 @@
       data: {
         labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
         datasets: [{
-          label: 'Temperatura Média',
-          data: [30, 29, 28, 25, 22, 23],
+          label: 'Temperatura Real',
+          data: [5, 6, 7, 9, 8, 8],
           borderWidth: 1,
           borderColor: '#AE1C1F',
       backgroundColor: '#AE1C1F' 
         },
 
         {
-          label: 'Umidade Média',
-          data: [80, 82, 80, 85, 80, 83],
+          label: 'Umidade Real',
+          data: [80, 76, 80, 76, 80, 78],
           borderWidth: 1,
           borderColor: '#F2CD7C',
       backgroundColor: '#F2CD7C'
@@ -241,14 +228,13 @@
     const ctx3 = document.getElementById('myChart3');
 
     const data = {
-      labels: ['Temperatura Elevada', 'Temperatura ok', 'Temperatura abaixo'],
+      labels: ['Temperatura ok', 'Temperatura abaixo'],
       datasets: [{
-        label: 'Quantidade de barris:',
-        data: [20, 250, 10],
+        label: 'Quantidade de barris',
+        data: [5, 1],
         backgroundColor: [
-          '#F2CD7C',
           '#AE1C1F',
-          '#EA937E'
+          '#F2CD7C'
         ],
         hoverOffset: 4
       }]
