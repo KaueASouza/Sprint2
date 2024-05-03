@@ -169,7 +169,7 @@ h1 {
 .card-item-1{
     width: 45vw;
     height: 400px;
-    background: #3a0008e8;
+    background:#3a0008;
     align-items: center;
     display: flex;
 
@@ -194,7 +194,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #3a0008e8;
+    background: #3a0008;
     margin: 0 0 20px;
    
 
@@ -216,7 +216,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #3a0008e8;
+    background: #3a0008;
   
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
