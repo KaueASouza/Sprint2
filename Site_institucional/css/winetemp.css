@@ -36,6 +36,12 @@ h5 {
     justify-content: space-evenly;
     margin-left: auto;
 }
+.navbarb{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: auto;
+}
 
 .navbar li {
     margin-right: 20px;
@@ -51,6 +57,7 @@ h5 {
     font-weight: bold;
     transition: color 0.3s ease;
 }
+
 
 .navbar a:hover {
     color: #9f160b;
