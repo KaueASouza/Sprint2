@@ -20,13 +20,14 @@ a {
 h1 {
     color: #333;
     align-items: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-bottom: 20px;
     /* padding-top: 15px;; */
     flex-wrap: wrap;
     /* background: red; */
 }
- /* .sh {
+
+/* .sh {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,30 +41,30 @@ h1 {
 
 }  */
 
-.pai{
+.pai {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
-.grupo{
+.grupo {
     margin: 0 0 3px;
 }
 
 
 .header {
-    width: 100%;
-    height: 30%;
+    width: 100vw;
+    height: 8vh;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     box-shadow: 30px 10px 110px rgba(105, 0, 0, 0.322);
-    padding: 0 20px;
+    padding: 25px 20px;
     justify-content: space-around;
-    margin: 0 0 2px ;
+    margin: 0 0 2px;
 
-    
+
 }
 
 
@@ -91,17 +92,20 @@ h1 {
 }
 
 .navbar a:hover {
-    color: #b66925; /* Cor ao passar o mouse */
+    color: #b66925;
+    /* Cor ao passar o mouse */
 }
 
 .logo {
-    width: 80px; /* Ajuste conforme necessário */
-    height: auto; /* Manter a proporção */
+    width: 80px;
+    /* Ajuste conforme necessário */
+    height: auto;
+    /* Manter a proporção */
     margin-right: 20px;
 }
 
 
-.imagem{
+.imagem {
     width: 57px;
     height: 20px;
     /* border-radius: 50%; */
@@ -123,18 +127,61 @@ h1 {
     box-shadow: 15 -15px 0 red
 }
 
-.father{
+.father {
     width: 100vw;
     height: 100%;
     background: rgb(255, 255, 255);
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-.child{
+.father1{
+    margin-top: 20px;
+    
+}
+.son div {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* width: 30vw; */
+    height: auto;
+
+    /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; ;  */
+    border-radius: 15px;
+    
+}
+.son h3{
+    padding: 10px 0;
+}
+.son img{
+    width: 40%;
+    margin: auto;
+    /* display: flex;
+    align-items: center; */
+}
+
+.son {
+    max-width: 1400px;
+    /* margin: auto; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    
+}
+.son p{
+    padding: 10px 0;
+}
+
+.son a {
+    width: auto;
+    align-self: center;
+    display: flex;
+    
+}
+.child {
     width: 100%;
     height: 90%;
 
@@ -144,7 +191,7 @@ h1 {
     justify-content: space-around;
 }
 
-.child-left{
+.child-left {
     width: 50%;
     height: 100%;
 
@@ -155,7 +202,7 @@ h1 {
     background-color: rgb(255, 255, 255);
 }
 
-.child-right{
+.child-right {
     width: 40%;
     height: 100%;
     background-color: rgb(255, 255, 255);
@@ -166,17 +213,17 @@ h1 {
     justify-content: space-around;
 }
 
-.card-item-1{
+.card-item-1 {
     width: 45vw;
     height: 400px;
-    background:#3a0008;
+    background: #3a0008;
     align-items: center;
     display: flex;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
-    color:white ;
-  
+    color: white;
+
 
     display: flex;
     flex-direction: column;
@@ -186,7 +233,7 @@ h1 {
     border-radius: 10px;
 }
 
-.card-item-2{
+.card-item-2 {
     width: 38vw;
     height: 250px;
     align-items: center;
@@ -196,19 +243,19 @@ h1 {
     justify-content: space-between;
     background: #3a0008;
     margin: 0 0 20px;
-   
+
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
-    color:white ;
+    color: white;
 
-    
+
 
     border: 6px solid #3a0008;
     border-radius: 10px;
 }
 
-.card-item-3{
+.card-item-3 {
     width: 38vw;
     height: fit-content;
     align-items: center;
@@ -217,18 +264,19 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     background: #3a0008;
-  
+
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
-    color:white ;
+    color: white;
 
-    
+
 
     border: 3px solid #3a0008;
     border-radius: 10px;
 }
-.tela{
+
+.tela {
     width: 45vw;
     height: 100%;
     background: rgb(255, 255, 255);
@@ -241,14 +289,15 @@ h1 {
 
     border: 10px solid #3a0008;
     border-radius: 16px;
-    
+
 }
-.tela2{
+
+.tela2 {
     width: 36vw;
     height: 100%;
     background: rgb(255, 255, 255);
     align-items: stretch;
-    
+
 
 
     flex-direction: column;
@@ -282,17 +331,18 @@ h1 {
     align-items: center;
     justify-content: center;
     color: #5f0000;
-    border-bottom: 3px solid #3a0008; /* Adiciona uma borda na parte inferior */
+    border-bottom: 3px solid #3a0008;
+    /* Adiciona uma borda na parte inferior */
 }
 
 
 
-.grafico1{
+.grafico1 {
     width: 100%;
     flex-wrap: wrap;
 }
 
-.grafico2{
+.grafico2 {
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -306,7 +356,8 @@ h1 {
 
 .grafico3 {
     width: 100%;
-    height: 80%; /* Ajusta a altura do gráfico para ocupar o restante do espaço */
+    height: 80%;
+    /* Ajusta a altura do gráfico para ocupar o restante do espaço */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -322,7 +373,7 @@ h1 {
     height: 190px;
 } */
 
-.campo{
+.campo {
     /* border: blue 3px solid; */
     width: 300vw;
     /* justify-content: center; */
@@ -332,13 +383,13 @@ h1 {
     justify-content: flex-start;
 }
 
-.informacao-card{
+.informacao-card {
     width: 50vw;
     margin-bottom: 15px;
     display: flex;
     border: #3a000800 3px solid;
     border-radius: 20px;
-    background-color: #42000900 ;
+    background-color: #42000900;
     flex-wrap: wrap;
 
 
@@ -346,7 +397,7 @@ h1 {
     justify-content: space-around;
 }
 
-.item-informacao{
+.item-informacao {
     width: 150px;
     height: 60px;
     display: flex;
@@ -361,8 +412,8 @@ h1 {
     border-radius: 10px;
 }
 
-.temp{
-    font-size:25px;
+.temp {
+    font-size: 25px;
     color: #ffffff;
     /* align-items: stretch; */
     /* justify-content: flex-end; */
@@ -370,28 +421,28 @@ h1 {
     /* padding: 32px; */
 }
 
-.desc1{
-font-size: 12px;
-color: #350000;
-/* border: 2px solid #3a0008; */
+.desc1 {
+    font-size: 12px;
+    color: #350000;
+    /* border: 2px solid #3a0008; */
 }
+
 .organizacao {
     padding-left: 15px;
     padding-right: 15px;
     /* border: #350000 2px solid; */
     /* display: flex;
     flex-wrap: wrap; */
-    
+
 }
+
 b {
     color: #3a0008;
 }
 
-.branco{
+.branco {
     height: 2px;
     display: flex;
     /* border:violet 2px solid; */
     /* padding: 5px 28px 30px 5px; */
 }
-
-
