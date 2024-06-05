@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/style-cadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap"rel="stylesheet">
+    <script src="./js/sessao.js"></script>
+</head>
+
+<body onload="listar()">
+
+    <div id="bg">
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+    </div>
+
+    <div class="voltar">
+
+        <a href="index.html"><img src="imgs/voltar.png" class="img2"></a>
+
+    </div>
+
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+
+    <div class="pai">
+
+        <h1>Crie sua conta</h1>
+
+        <br><br>
+
+
+        <div class="input-field">
+          Empresa<br>
+          <select name="empresas" id="listaEmpresas">
+            <option selected>Selecione uma empresa</option>
+          </select>
+        </div>
+
+
+        <div class="input-field">
+            <input type="text" name="Nome" id="nome_input" required="required" autocomplete="off">
+            <span>Nome completo</span>
+        </div>
+
+
+        <div class="input-field">
+            <input type="text" name="E-mail" id="email_input" required="required" autocomplete="off">
+            <span>E-mail</span>
+        </div>
+
+
+        <div class="input-field">
+            <input type="password" name="Senha" id="senha_input" required="required" autocomplete="off">
+            <span>Senha</span>
+        </div>
+
+
+        <div class="input-field">
+            <input type="password" name="confSenha" id="confirmacao_senha_input" required="required" autocomplete="off">
+            <span>Confime a senha</span>
+        </div>
+
+        <div class="checkbox">
+            <p>Exibir senha</p>  
+            <input type="checkbox" onclick="mostrarsenha()"> 
+        </div>
+
+        <p>Já tem uma conta? <a style="color:rgba(140, 0, 0, 0.98);" href="Login.html">Clique aqui</a></p><br>
+        <button class="botao" onclick="cadastrar()">Cadastrar-se</button>
+
+    </div>
+
+    <div class="svg">
+        
+        <img src="imgs/img.svg" class="img">
+       
+    </div>
+
+    <div id="div_aguardar" class="loading-div">
+      <img src="./assets/circle-loading.gif" id="loading-gif" />
+    </div>
+
+    <div id="div_erros_login"></div>
+
+</body>
+
+</html>
+
+<script>
+
+function validarEmail(email) {
+    var IndexArroba = email.indexOf('@');
+    var IndexPonto = email.indexOf('.', IndexArroba);
+
+    // Verifica se "@" está presente e não é o primeiro caractere
+    // e se "." está presente após o "@"
+    // Além disso, "." não deve ser o último caractere
+    if (IndexArroba > 0 && IndexPonto > IndexArroba + 1 && IndexPonto < email.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var empresaVar = listaEmpresas.value
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" ||
+      empresaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+
+      finalizarAguardar();
+      return false;
+    }
+    if (senhaVar.length < 8) {
+      alert("A senha deve ter no mínimo 8 caracteres.");
+      finalizarAguardar();
+      return false;
+
+    }  if (senhaVar !== confirmacaoSenhaVar) {
+      alert("As senhas não correspondem.");
+      finalizarAguardar();
+      return false;
+
+    } if (!validarEmail(emailVar)) {
+
+    alert("Por favor, insira um e-mail válido.");
+    finalizarAguardar();
+    return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        empresaServer: empresaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+
+          setTimeout(() => {
+            window.location = "Login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.nome}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>

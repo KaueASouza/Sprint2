@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style-login.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="bg">
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+    </div>
+
+    <div style="display: flex; border: 2px solid rgb(105, 10, 10); background-color: white; width: 30%; text-align: justify; padding: 10px; border-radius: 5px;">
+        <p>É necessário realizar o login para a utilização da ferramenta de suporte.</p>
+    </div>
+
+    <div class="pai">
+
+        <h1>Faça o login</h1>
+
+        <br><br><br>
+
+        <div class="input-field">
+            <input type="text" name="E-mail" id="email_input" required="required" autocomplete="off">
+            <span>E-mail</span>
+        </div>
+
+        <div class="input-field">
+            <input type="password" name="Senha" id="senha_input" required="required" autocomplete="off">
+            <span>Senha</span>
+        </div>
+
+        <div class="checkbox">
+            <p>Exibir senha</p>  
+            <input type="checkbox" onclick="mostrarsenha()"> 
+        </div>
+
+        <a style="color:rgb(140, 0, 0, 0.979);" href="">Esqueceu a senha?</a>
+        <p>Não tem uma conta? <a style="color:rgba(140, 0, 0, 0.979);" href="Cadastro.html">Clique aqui</a></p>
+
+        <br>
+
+        <button class="botao" onclick="entrar()">Fazer Login</button>
+
+    </div>
+
+   
+    <div id="div_aguardar" class="loading-div">
+    </div>
+    
+    <div id="div_erros_login"></div>
+    </div> 
+
+</body>
+</html>
+
+<script>
+
+
+    function entrar() {
+
+        var emailpermitir =  sessionStorage.EMAIL_USUARIO;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var indice_email = emailVar.indexOf('n3')
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else if (indice_email < 0) {
+            alert('Não é permetido o acesso para' + emailVar)
+            return false;
+        } 
+         else if (emailVar != emailpermitir ) {
+            alert('Não é permetido o acesso para' + emailVar)
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "suporte.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
