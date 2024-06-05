@@ -29,9 +29,9 @@ const serial = async (
             // Credenciais do banco de dados
             host: 'localhost',
             user: 'aluno',
-            password: 'Sptech#2024',
+            password: 'sptech',
             database: 'WineTemp',
-            port: 3307
+            port: 3306
         }
     ).promise();
 
