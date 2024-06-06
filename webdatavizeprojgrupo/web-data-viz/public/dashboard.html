@@ -4,11 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="imagex/png" href="logpng">
+  <link rel="shortcut icon" type="image/png" href="logpng">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <link rel="stylesheet" href="css/styledash.css">
   <title>DashBoard - WineTemp</title>
 </head>
@@ -19,7 +17,6 @@
       <a href="/Site_institucional/winetemp.html"><img src="imgs/Logo.png" alt="Logo" class="logo"></a>
       <div class="container1">
         <ul class="navbar">
-
           <li><a href="Login.html">Sair</a></li>
           <li><a href="loginBobia.html">Suporte</a></li>
         </ul>
@@ -27,250 +24,117 @@
     </div>
     <div class="father1">
       <div class="son">
-        <div class="">
+        <div>
           <h3>Barril 1</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-vermelho.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-vermelho.svg" alt="Barril 1">
           </a>
-          <div class="show">
-            
+          <div class="show" id="barril1">
+            <p></p>
           </div>
         </div>
         <div>
           <h3>Barril 2</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-vermelho.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-vermelho.svg" alt="Barril 2">
           </a>
-          <div class="show">
-         
-          </div>
+          <div class="show" id="barril2"></div>
         </div>
         <div>
           <h3>Barril 3</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-vermelho.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-vermelho.svg" alt="Barril 3">
           </a>
-          <div class="show">
-            <p>Temperatura : <div class="temperatura"></div></p>
-            <p>Umidade : <div class="umidade"></div></p>
-          </div>
+          <div class="show" id="barril3"></div>
         </div>
         <div>
           <h3>Barril 4</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-amarelo.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-amarelo.svg" alt="Barril 4">
           </a>
-          <div class="show">
-            <p>Temperatura : <div class="temperatura"></div></p>
-            <p>Umidade : <div class="umidade"></div></p>
-          </div>
+          <div class="show" id="barril5"></div>
         </div>
         <div>
           <h3>Barril 5</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-amarelo.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-amarelo.svg" alt="Barril 5">
           </a>
-          <div class="show">
-            
-          </div>
+          <div class="show" id="barril5"></div>
         </div>
         <div>
           <h3>Barril 6</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-amarelo.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-amarelo.svg" alt="Barril 6">
           </a>
-          <div class="show">
-         
-          </div>
+          <div class="show" id="barril6"></div>
         </div>
         <div>
           <h3>Barril 7</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-verde.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-verde.svg" alt="Barril 7">
           </a>
-          <div class="show">
-        
-          </div>
+          <div class="show" id="barril7"></div>
         </div>
         <div>
           <h3>Barril 8</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-verde.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-verde.svg" alt="Barril 8">
           </a>
-          <div class="show">
-
-          </div>
+          <div class="show" id="barril8"></div>
         </div>
         <div>
           <h3>Barril 9</h3>
-          <a href="..\integraArduinoide\index.html">
-            <img src="imgs/barril-verde.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-verde.svg" alt="Barril 9">
           </a>
-          <div class="show">
-         
-          </div>
+          <div class="show" id="barril9"></div>
         </div>
         <div>
           <h3>Barril 10</h3>
-          <a href="..\integraArduinoide\index.html">
-
-            <img src="imgs/barril-verde.svg" alt="">
+          <a href="../integraArduinoide/index.html">
+            <img src="imgs/barril-verde.svg" alt="Barril 10">
           </a>
-          <div class="show">
-
-          </div>
+          <div class="show" id="barril10"></div>
         </div>
       </div>
     </div>
-
-    <div class="grupo">
-
-
-    </div>
-
+    <div class="grupo"></div>
   </div>
-  </div>
+
+  <script>
+    window.onload = function () {
+      capturar();
+    };
+
+    function capturar() {
+    fetch('/captura/capturar', { cache: 'no-store' })
+      .then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            resposta.forEach(item => {
+              document.getElementById("show").innerHTML += `
+                <div class="show">
+                  <div class="desc-aquario">
+                    <div class="temperatura">
+                      <p id="temp_aquario_${item.id}">${item.temperatura}°C</p>
+                    </div>
+                    <div class="cor-alerta" id="card_${item.id}">${item.umidade}%</div>
+                  </div>
+                </div>
+              `;
+            });
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados: ${error.message}`);
+      });
+  }
+  </script>
+
 </body>
 
 </html>
-<script>
-  
-
-  function cadastrar() {
-      JSON.parse(sessionStorage.CAPTURA).forEach(item => {
-          document.getElementById("show").innerHTML += `
-                  <div class="show">
-                    <p>Temperatura : ${item.temperatura} º</p>
-                    <p>Umidade : ${item.umidade} </p>
-                  </div>
-                  `
-      });
-  }
-
-</script>
-<!-- 
-  <script>
-    // alert('Barril E está com a temperatura elevada. Risco de perda de vinho!')
-
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Barril A', 'Barril B', 'Barril C', 'Barril D', 'Barril E', 'Barril F'],
-        datasets: [{
-          label: 'Temperatura Média',
-          data: [16, 14, 14, 15, 8, 16],
-          borderWidth: 1,
-          // borderColor: '#DEB887',
-          backgroundColor: '#AE1C1F'
-
-        },
-
-        {
-          label: 'Umidade Média',
-          data: [55, 62, 60, 62, 78, 65],
-          borderWidth: 1,
-          //  borderColor: '#B0E0E6',
-          backgroundColor: '#F2CD7C'
-
-        }]
-      },
-
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-    const ctx2 = document.getElementById('myChart2');
-
-    new Chart(ctx2, {
-      type: 'line',
-
-      data: {
-        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
-        datasets: [{
-          label: 'Temperatura Real',
-          data: [5, 6, 7, 9, 8, 8],
-          borderWidth: 1,
-          borderColor: '#AE1C1F',
-          backgroundColor: '#AE1C1F'
-        },
-
-        {
-          label: 'Umidade Real',
-          data: [80, 76, 80, 76, 80, 78],
-          borderWidth: 1,
-          borderColor: '#F2CD7C',
-          backgroundColor: '#F2CD7C'
-        }]
-      },
-
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-    const ctx3 = document.getElementById('myChart3');
-
-    new Chart(ctx3, {
-      type: 'bar',
-
-      data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Junho', 'Julho'],
-        datasets: [{
-          label: 'Setor 1 - Temperatura',
-          data: [23, 15, 22, 25, 27, 18],
-          borderWidth: 1,
-          borderColor: '#701214',
-          backgroundColor: '#701214'
-        },
-
-        {
-          label: 'Setor 1 - Umidadade',
-          data: [80, 76, 80, 76, 80, 78],
-          borderWidth: 1,
-          borderColor: '#D61C21',
-          backgroundColor: '#D61C21'
-        },
-
-        {
-          label: 'Setor 2 - Temperatura',
-          data: [10, 15, 12, 20, 8, 8],
-          borderWidth: 1,
-          borderColor: '#F2CD7C',
-          backgroundColor: '#F2CD7C'
-        },
-
-        {
-          label: 'Setor 2 - Umidade',
-          data: [78, 70, 55, 75, 76, 78],
-          borderWidth: 1,
-          borderColor: '#F4A460',
-          backgroundColor: '#F4A460'
-        }]
-      },
-
-
-
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-
-
-
-  </script> -->

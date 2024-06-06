@@ -1,8 +1,8 @@
 var database = require("../database/config");
 
-function cadastrar() {
+function capturar() {
   
-    var instrucaoSql = ` SELECT * FROM historico WHERE umidade = ${umidade} AND temperatura = ${temperatura}`;
+    var instrucaoSql = ` SELECT * FROM historico`;
   
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -10,5 +10,5 @@ function cadastrar() {
   
   
   module.exports = {
-    cadastrar
+    capturar
   }

@@ -1,19 +1,23 @@
-var aquarioModel = require("../models/aquarioModel");
+var capturaModel = require("../models/capturaModel");
 
-function cadastrar(req, res) {
-    var temperatura = req.body.temperatura;
-    var umidade = req.body.umidade;
+function capturar(req, res) {
   
-    if (temperatura == undefined) {
-      res.status(400).send("temperatura está undefined!");
-    } else if (umidade == undefined) {
-      res.status(400).send("umidade está undefined!");
-    } else {
+    
   
   
-      aquarioModel.cadastrar(temperatura, umidade)
+      capturaModel.capturar()
         .then((resultado) => {
-          res.status(201).json(resultado);
+
+          for(i = 0 ; i <= resultado.length; i++ ){
+            console.log(resultado[i]);
+          }
+
+
+
+          res.json({
+            temperatura: resultado.temperatura,
+            umidade: resultado.umidade
+          })
         }
         ).catch((erro) => {
           console.log(erro);
@@ -24,8 +28,8 @@ function cadastrar(req, res) {
           res.status(500).json(erro.sqlMessage);
         });
     }
-  }
+
   
   module.exports = {
-    cadastrar
+    capturar
   }
