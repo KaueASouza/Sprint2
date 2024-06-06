@@ -32,72 +32,83 @@
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-vermelho.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+            
+          </div>
         </div>
         <div>
           <h3>Barril 2</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-vermelho.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+         
+          </div>
         </div>
         <div>
           <h3>Barril 3</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-vermelho.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+            <p>Temperatura : <div class="temperatura"></div></p>
+            <p>Umidade : <div class="umidade"></div></p>
+          </div>
         </div>
         <div>
           <h3>Barril 4</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-amarelo.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+            <p>Temperatura : <div class="temperatura"></div></p>
+            <p>Umidade : <div class="umidade"></div></p>
+          </div>
         </div>
         <div>
           <h3>Barril 5</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-amarelo.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+            
+          </div>
         </div>
         <div>
           <h3>Barril 6</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-amarelo.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+         
+          </div>
         </div>
         <div>
           <h3>Barril 7</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-verde.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+        
+          </div>
         </div>
         <div>
           <h3>Barril 8</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-verde.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+
+          </div>
         </div>
         <div>
           <h3>Barril 9</h3>
           <a href="..\integraArduinoide\index.html">
             <img src="imgs/barril-verde.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+         
+          </div>
         </div>
         <div>
           <h3>Barril 10</h3>
@@ -105,8 +116,9 @@
 
             <img src="imgs/barril-verde.svg" alt="">
           </a>
-          <p>Temperatura : <div class="temperatura"></div></p>
-          <p>Umidade : <div class="umidade"></div></p>
+          <div class="show">
+
+          </div>
         </div>
       </div>
     </div>
@@ -118,7 +130,25 @@
 
   </div>
   </div>
+</body>
 
+</html>
+<script>
+  
+
+  function cadastrar() {
+      JSON.parse(sessionStorage.CAPTURA).forEach(item => {
+          document.getElementById("show").innerHTML += `
+                  <div class="show">
+                    <p>Temperatura : ${item.temperatura} º</p>
+                    <p>Umidade : ${item.umidade} </p>
+                  </div>
+                  `
+      });
+  }
+
+</script>
+<!-- 
   <script>
     // alert('Barril E está com a temperatura elevada. Risco de perda de vinho!')
 
@@ -243,8 +273,4 @@
 
 
 
-  </script>
-
-</body>
-
-</html>
+  </script> -->
