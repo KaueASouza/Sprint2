@@ -52,7 +52,7 @@
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-amarelo.svg" alt="Barril 4">
           </a>
-          <div class="show" id="barril5"></div>
+          <div class="show" id="barril4"></div> <!-- Corrigido aqui -->
         </div>
         <div>
           <h3>Barril 5</h3>
@@ -104,37 +104,45 @@
   <script>
     window.onload = function () {
       capturar();
+      gerarnovasumidades()
     };
 
     function capturar() {
-    fetch('/captura/capturar', { cache: 'no-store' })
-      .then(function (response) {
-        if (response.ok) {
-          response.json().then(function (resposta) {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            resposta.forEach(item => {
-              document.getElementById("show").innerHTML += `
-                <div class="show">
-                  <div class="desc-aquario">
-                    <div class="temperatura">
-                      <p id="temp_aquario_${item.id}">${item.temperatura}°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_${item.id}">${item.umidade}%</div>
-                  </div>
-                </div>
+      fetch('/captura/capturar') // Substitua pela URL correta, se necessário
+        .then(response => response.json())
+        .then(data => {
+          for (let i = 0; i < data.length; i++) {
+            const item = data[i];
+            const barrilElement = document.getElementById(`barril${i + 1}`);
+            if (barrilElement) {
+              barrilElement.innerHTML = `
+                <p>Temperatura: ${item.temperatura} ºC</p>
+                <p>Umidade: ${item.umidade}%</p>
               `;
-            });
-          });
-        } else {
-          console.error('Nenhum dado encontrado ou erro na API');
-        }
-      })
-      .catch(function (error) {
-        console.error(`Erro na obtenção dos dados: ${error.message}`);
-      });
-  }
-  </script>
+            }
+          }
+        })
+        .catch(error => console.error('Erro ao obter os dados:', error));
+    }
 
+    function gerarnovasumidades() {
+      aleatorio = Math.random()
+      umidade = aleatorio * 100;
+
+      aleatorio2 = Math.random()
+      temp = aleatorio * 5 + 13;
+
+
+      barril2.innerHTML =` <br> temperatura = ${temp.toFixed(2)}ºC
+                           <br> umidade = ${umidade.toFixed(0)}%`
+
+        setInterval(() => {
+          gerarnovasumidades()
+        }, 5000);
+    }
+
+
+  </script>
 </body>
 
 </html>

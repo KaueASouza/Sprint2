@@ -1,32 +1,17 @@
 var capturaModel = require("../models/capturaModel");
 
 function capturar(req, res) {
-  
-    
-  
-  
-      capturaModel.capturar()
-        .then((resultado) => {
-
-          for(i = 0 ; i <= resultado.length; i++ ){
-            console.log(resultado[i]);
-          }
-
-
-
-          res.json({
-            temperatura: resultado.temperatura,
-            umidade: resultado.umidade
-          })
-        }
-        ).catch((erro) => {
-          console.log(erro);
-          console.log(
-            "\nHouve um erro ao realizar o cadastro! Erro: ",
-            erro.sqlMessage
-          );
-          res.status(500).json(erro.sqlMessage);
-        });
+  capturaModel.capturar().then(function (resultado) {
+    if (resultado.length > 0) {
+        res.status(200).json(resultado);
+    } else {
+        res.status(204).send("Nenhum resultado encontrado!")
+    }
+}).catch(function (erro) {
+    console.log(erro);
+    console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+    res.status(500).json(erro.sqlMessage);
+});
     }
 
   
