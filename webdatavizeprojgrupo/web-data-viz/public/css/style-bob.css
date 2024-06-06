@@ -51,7 +51,7 @@ h2 {
     height: 85%;
     display: flex;
     justify-content: center;
-    padding-top: 150px;
+    align-items: center;
 }
 
 .container {
@@ -100,11 +100,21 @@ button:hover {
 }
 
 #resposta {
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #D0D3D4;
-    border: 1px solid #63666A;
-    text-align: left;
+    width: 80%;
+    color: white;
+    text-align: start;
     display: none;
+    padding: 0 60px 0 60px;
 }
+
+.blur {
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    background-color: rgb(175, 1, 1);
+    top: 0;
+    left: 55%;
+    border-radius: 0 0 30% 30%;
+    filter: blur(90px);
+    z-index: -1;
+    }
