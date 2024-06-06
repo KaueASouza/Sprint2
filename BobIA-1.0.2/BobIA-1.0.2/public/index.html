@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BobIA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-bob.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div id="container">
-        <h1>BobIA</h1>
-        <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea>
-        <br><br>
-        <button onclick="gerarResposta()">Gerar Resposta</button>
-        <h3>Resposta da IA:</h3>
-        <div id="resposta"></div>
+    <div class="father">
+
+        <div class="titulo">
+            <h1>Bob IA</h1>
+        </div>
+
+        <div class="father-resposta">
+            
+            <div class="father2-resposta">
+                
+                <h2>Qual é a sua dúvida?</h2>
+
+                <div id="resposta"></div>
+
+            </div>
+
+            <div class="container">
+                <input placeholder="Pesquisar" type="text" name="text" id="pergunta" autocomplete="off">
+                <button onclick="gerarResposta()"><img src="seta-direita.png"></button>
+            </div>
+
+        </div>
+        
     </div>
 
     <script>
-        
+
         async function gerarResposta() {
             const pergunta = document.getElementById('pergunta').value;
 
@@ -37,6 +58,7 @@
         }
 
     </script>
-    
+
 </body>
+
 </html>

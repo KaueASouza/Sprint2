@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0e10;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 45px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.father {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.titulo {
+    height: 100%;
+    width: 30%;
+    background: rgb(86,11,11);
+    background: linear-gradient(90deg, rgba(86,11,11,1) 0%, #0d0e10 93%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.father-resposta {
+    width: 70%;
+}
+
+
+.father2-resposta {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+.container {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+input {
+    width: 80%;
+    padding: 15px 60px 15px 15px;
+    border-radius: 6px;
+    font-size: 18px;
+    background-color: #070708;
+    color: rgb(204, 204, 204);
+    border: 2px solid rgb(55, 7, 7);
+    outline: none;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+  
+input:hover {
+    box-shadow: 0px 0px 32px -22px red;
+}
+  
+input:focus {
+    border: 2px solid rgb(86, 11, 11);
+    box-shadow: 0px 0px 37px -18px red;
+}
+
+button {
+    margin: 0px 0px 0px -47px;
+    padding: 9px 10px 7px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: rgb(86, 11, 11);
+    color: #ffffff;
+    border: none;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    background-color: rgb(49, 5, 5);
+}
+
+#resposta {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #D0D3D4;
+    border: 1px solid #63666A;
+    text-align: left;
+    display: none;
+}
