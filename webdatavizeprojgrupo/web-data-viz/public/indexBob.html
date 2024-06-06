@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BobIA</title>
-    <link rel="stylesheet" href="style-bob.css">
+    <link rel="stylesheet" href="css/style-bob.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -20,18 +20,22 @@
         </div>
 
         <div class="father-resposta">
+
+            <div class="blur"></div>
             
-            <div class="father2-resposta">
-                
-                <h2>Qual é a sua dúvida?</h2>
+            <div class="father2-resposta">                
+
+                <div id="idDuvida" style="display: block;"><h2>Qual é a sua dúvida?</h2></div>
+
+                <br><br>
 
                 <div id="resposta"></div>
 
             </div>
 
             <div class="container">
-                <input placeholder="Pesquisar" type="text" name="text" id="pergunta" autocomplete="off">
-                <button onclick="gerarResposta()"><img src="seta-direita.png"></button>
+                <input placeholder="Pesquisar" type="text" name="text" id="idPergunta" autocomplete="off">
+                <button onclick="gerarResposta()"><img src="imgs/seta-direita.png"></button>
             </div>
 
         </div>
@@ -39,11 +43,13 @@
     </div>
 
     <script>
-
+        
         async function gerarResposta() {
-            const pergunta = document.getElementById('pergunta').value;
+            const pergunta = document.getElementById('idPergunta').value;
+            idDuvida.style.display = "none";
+            idPergunta.value = "";
 
-            const response = await fetch('/perguntar', {
+            const response = await fetch('http://localhost:3334/perguntar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -58,6 +64,7 @@
         }
 
     </script>
+    
 
 </body>
 

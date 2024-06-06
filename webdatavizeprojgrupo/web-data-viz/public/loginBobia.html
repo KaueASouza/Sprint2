@@ -45,9 +45,6 @@
             <input type="checkbox" onclick="mostrarsenha()"> 
         </div>
 
-        <a style="color:rgb(140, 0, 0, 0.979);" href="">Esqueceu a senha?</a>
-        <p>Não tem uma conta? <a style="color:rgba(140, 0, 0, 0.979);" href="Cadastro.html">Clique aqui</a></p>
-
         <br>
 
         <button class="botao" onclick="entrar()">Fazer Login</button>
@@ -118,7 +115,7 @@
                     sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "suporte.html";
+                        window.location = "indexBob.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
