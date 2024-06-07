@@ -104,7 +104,7 @@
   <script>
     window.onload = function () {
       capturar();
-      gerarnovasumidades()
+      startUpdating();
     };
 
     function capturar() {
@@ -124,24 +124,53 @@
         })
         .catch(error => console.error('Erro ao obter os dados:', error));
     }
+    
 
-    function gerarnovasumidades() {
-      aleatorio = Math.random()
-      umidade = aleatorio * 100;
-
-      aleatorio2 = Math.random()
-      temp = aleatorio * 5 + 13;
-
-
-      barril2.innerHTML =` <br> temperatura = ${temp.toFixed(2)}ºC
-                           <br> umidade = ${umidade.toFixed(0)}%`
-
-        setInterval(() => {
-          gerarnovasumidades()
-        }, 5000);
+    function generateRandomValues() {
+      return {
+        temperatura: (Math.random() * 12 + 8).toFixed(2),
+        umidade: (Math.random() * 19 + 53).toFixed(0) // Umidade entre 55 e 77
+      };
     }
 
+    function updateBarrel(id) {
+      const values = generateRandomValues();
+      const barrilElement = document.getElementById(id);
+      if (barrilElement) {
+        barrilElement.innerHTML = `
+          <p>Temperatura: ${values.temperatura} ºC</p>
+          <p>Umidade: ${values.umidade}%</p>
+        `;
+        const tempElement = barrilElement.querySelector('p:first-child');
+        const humidityElement = barrilElement.querySelector('p:last-child');
+        if (tempElement) {
+          tempElement.classList.remove('low-temp', 'high-temp');
+          if (values.temperatura < 10) {
+            tempElement.classList.add('low-temp');
+          } else if (values.temperatura > 18) {
+            tempElement.classList.add('high-temp');
+      }
+    }
+    if (humidityElement) {
+          humidityElement.classList.remove('low-humidity', 'high-humidity');
+          if (values.umidade < 55) {
+            humidityElement.classList.add('low-humidity');
+          } else if (values.umidade > 70) {
+            humidityElement.classList.add('high-humidity');
+          }
+        }
+  }
+}
 
+    function startUpdating() {
+      const numBarrels = 10;
+      for (let i = 1; i <= numBarrels; i++) {
+        updateBarrel(`barril${i}`);
+        setInterval(() => {
+          updateBarrel(`barril${i}`);
+        }, 5000); // 1 minuto = 60000 milissegundos
+      }
+    }
   </script>
 </body>
 

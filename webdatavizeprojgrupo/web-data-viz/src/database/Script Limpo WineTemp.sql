@@ -156,3 +156,12 @@ join
     historico on barris_vinho.idbarris_vinho = historico.idHistorico;
     
     select* from empresa;
+
+    INSERT INTO historico (data_hora, umidade, temperatura) VALUES 
+('2024-05-03 08:15', 55, 18.2),
+('2024-05-03 12:45', 60, 16.8),
+('2024-05-04 14:30', 57, 19.1),
+('2024-05-04 18:00', 62, 14.7),
+('2024-05-05 09:20', 59, 17.0),
+('2024-05-02 10:29', 58, 17.4),
+('2024-05-05 21:10', 64, 15.3);

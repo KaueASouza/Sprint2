@@ -446,3 +446,19 @@ b {
     /* border:violet 2px solid; */
     /* padding: 5px 28px 30px 5px; */
 }
+
+.low-temp {
+    color: blue;
+  }
+  
+  .high-temp {
+    color: red;
+  }
+
+  .low-humidity {
+    color: orange;
+  }
+  
+  .high-humidity {
+    color: purple;
+  }

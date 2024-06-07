@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/style-login.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,14 +17,10 @@
         <canvas></canvas>
     </div>
 
-    <div class="voltar">
-
-        <a href="index.html"><img src="imgs/voltar.png" class="img2"></a>
-
-    </div>
-
     <div class="pai">
-
+        <div class="voltar">
+            <a href="index.html"><img src="imgs/voltar.png" class="img2"></a>
+        </div>
         <h1>Faça o login</h1>
 
         <br><br><br>
@@ -43,8 +36,8 @@
         </div>
 
         <div class="checkbox">
-            <p>Exibir senha</p>  
-            <input type="checkbox" onclick="mostrarsenha()"> 
+            <p>Exibir senha</p>
+            <input type="checkbox" onclick="mostrarsenha()">
         </div>
 
         <a style="color:rgb(140, 0, 0, 0.979);" href="">Esqueceu a senha?</a>
@@ -57,40 +50,27 @@
     </div>
 
     <div class="svg">
-
         <img src="imgs/img.svg" class="img">
-       
     </div>
 
-    <div id="div_aguardar" class="loading-div">
-    </div>
-    
-    <div id="div_erros_login"></div>
-    </div> 
-
+    <div id="div_aguardar" class="loading-div" style="display: none;">Loading...</div>
+    <div id="div_erros_login" class="error-div"></div>
 </body>
+
 </html>
 
 <script>
-
-
     function entrar() {
-
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var emailVar = document.getElementById('email_input').value;
+        var senhaVar = document.getElementById('senha_input').value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            document.getElementById('div_erros_login').style.display = "block";
+            document.getElementById('div_erros_login').innerHTML = "Todos os campos são obrigatórios.";
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+        document.getElementById('div_aguardar').style.display = "block";
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -101,44 +81,38 @@
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+        }).then(resposta => {
+            document.getElementById('div_aguardar').style.display = "none";
 
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                    setTimeout(function () {
-                        window.location = "dashboard.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
+            if (!resposta.ok) {
+                throw new Error("Houve um erro ao tentar realizar o login!");
             }
 
-        }).catch(function (erro) {
+            return resposta.json();
+        }).then(json => {
+            sessionStorage.setItem('EMAIL_USUARIO', json.email);
+            sessionStorage.setItem('NOME_USUARIO', json.nome);
+            sessionStorage.setItem('ID_USUARIO', json.id);
+
+            setTimeout(function () {
+                window.location = "dashboard.html";
+            }, 1000); // apenas para exibir o loading
+
+        }).catch(erro => {
             console.log(erro);
-        })
+            document.getElementById('div_erros_login').style.display = "block";
+            document.getElementById('div_erros_login').innerHTML = erro.message;
+        });
 
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
+    function mostrarsenha() {
+        const senhaInput = document.getElementById('senha_input');
+        if (senhaInput.type === "password") {
+            senhaInput.type = "text";
+        } else {
+            senhaInput.type = "password";
+        }
     }
-
 </script>
