@@ -5,96 +5,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="logpng">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="css/styledash.css">
   <title>DashBoard - WineTemp</title>
 </head>
 
 <body>
-  <div class="pai">
-    <div class="header">
-      <a href="/Site_institucional/winetemp.html"><img src="imgs/Logo.png" alt="Logo" class="logo"></a>
-      <div class="container1">
-        <ul class="navbar">
-          <li><a href="Login.html">Sair</a></li>
-          <li><a href="loginBobia.html">Suporte</a></li>
-        </ul>
-      </div>
+  <div class="header">
+    <a href="/Site_institucional/winetemp.html"><img src="imgs/Logo.png" alt="Logo" class="logoNav"></a>
+    <div class="container1">
+      <ul class="navbar">
+        <li><a href="loginBobia.html">Suporte</a></li>
+        <li><a href="Login.html">Sair</a></li>
+      </ul>
     </div>
+  </div>
+  <div class="pai">
     <div class="father1">
       <div class="son">
-        <div>
+        <div class="card">
           <h3>Barril 1</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-vermelho.svg" alt="Barril 1">
           </a>
-          <div class="show" id="barril1">
-            <p></p>
+          <div id="barril1">
+            <div class="icones">
+              <img src="imgs/temp-c.svg" class="temp">
+              <p></p>
+            </div>
           </div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 2</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-vermelho.svg" alt="Barril 2">
           </a>
-          <div class="show" id="barril2"></div>
+          <div id="barril2"></div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 3</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-vermelho.svg" alt="Barril 3">
           </a>
-          <div class="show" id="barril3"></div>
+          <div id="barril3"></div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 4</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-amarelo.svg" alt="Barril 4">
           </a>
-          <div class="show" id="barril4"></div> <!-- Corrigido aqui -->
+          <div id="barril4"></div> <!-- Corrigido aqui -->
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 5</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-amarelo.svg" alt="Barril 5">
           </a>
-          <div class="show" id="barril5"></div>
+          <div id="barril5"></div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 6</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-amarelo.svg" alt="Barril 6">
           </a>
-          <div class="show" id="barril6"></div>
+          <div id="barril6"></div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 7</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-verde.svg" alt="Barril 7">
           </a>
-          <div class="show" id="barril7"></div>
+          <div id="barril7"></div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 8</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-verde.svg" alt="Barril 8">
           </a>
-          <div class="show" id="barril8"></div>
+          <div id="barril8"></div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 9</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-verde.svg" alt="Barril 9">
           </a>
-          <div class="show" id="barril9"></div>
+          <div id="barril9"></div>
         </div>
-        <div>
+        <div class="card">
           <h3>Barril 10</h3>
           <a href="../integraArduinoide/index.html">
             <img src="imgs/barril-verde.svg" alt="Barril 10">
           </a>
-          <div class="show" id="barril10"></div>
+          <div id="barril10"></div>
         </div>
       </div>
     </div>
@@ -124,7 +129,7 @@
         })
         .catch(error => console.error('Erro ao obter os dados:', error));
     }
-    
+
 
     function generateRandomValues() {
       return {
@@ -149,9 +154,9 @@
             tempElement.classList.add('low-temp');
           } else if (values.temperatura > 18) {
             tempElement.classList.add('high-temp');
-      }
-    }
-    if (humidityElement) {
+          }
+        }
+        if (humidityElement) {
           humidityElement.classList.remove('low-humidity', 'high-humidity');
           if (values.umidade < 55) {
             humidityElement.classList.add('low-humidity');
@@ -159,8 +164,8 @@
             humidityElement.classList.add('high-humidity');
           }
         }
-  }
-}
+      }
+    }
 
     function startUpdating() {
       const numBarrels = 10;
