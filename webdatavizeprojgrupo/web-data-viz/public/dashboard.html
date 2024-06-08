@@ -32,8 +32,7 @@
             <img src="imgs/barril-vermelho.svg" alt="Barril 1">
           </a>
           <div id="barril1">
-            <div class="icones">
-              <img src="imgs/temp-c.svg" class="temp">
+            <div>
               <p></p>
             </div>
           </div>
@@ -143,8 +142,8 @@
       const barrilElement = document.getElementById(id);
       if (barrilElement) {
         barrilElement.innerHTML = `
-          <p>Temperatura: ${values.temperatura} ºC</p>
-          <p>Umidade: ${values.umidade}%</p>
+          <p><br><style style="font-size: 17px;"></style>Temperatura: ${values.temperatura} ºC</p>
+          <p><style style="font-size: 17px;"></style>Umidade: ${values.umidade}%</p>
         `;
         const tempElement = barrilElement.querySelector('p:first-child');
         const humidityElement = barrilElement.querySelector('p:last-child');
