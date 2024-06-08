@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/styledash.css">
+    <title>DashBoard - WineTemp</title>
+</head>
+
+<body onload="iniciarAtualizacao();">
+    <div class="pai">
+        <div class="header">
+            <a href="dashboard.html"><img src="imgs/Logo.png" alt="Logo" class="logo"></a>
+            <div class="container1">
+                <ul class="navbar">
+                    <li><a href="Login.html">Sair</a></li>
+                    <li><a href="loginBobia.html">Suporte</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="englobagrafico">
+            <div class="graficoespecifico">
+                <canvas id="myChartCanvas" class="canvas"></canvas>
+            </div>
+
+            <div class="graficoespecifico">
+                <canvas id="myChartCanvas2" class="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function iniciarAtualizacao() {
+            obterDadosGrafico().then(() => {
+                setInterval(obterDadosGrafico, 300000); // 5 minutos em milissegundos
+            });
+            obterDadosGrafico2().then(() => {
+                setInterval(obterDadosGrafico2, 300000); // 5 minutos em milissegundos
+            });
+        }
+
+        async function obterDadosGrafico() {
+            try {
+                let response = await fetch("/captura/capturar", { method: "GET" });
+                if (response.ok) {
+                    let json = await response.json();
+                    plotarGrafico(json);
+                } else {
+                    let texto = await response.text();
+                    console.error("Houve um erro ao tentar realizar o obterDadosGrafico!", texto);
+                }
+            } catch (erro) {
+                console.error(erro);
+            }
+        }
+
+        function plotarGrafico(response) {
+            var labels = [];
+            var valores = [];
+
+            for (let index = 0; index < response.length; index++) {
+                var registro = response[index];
+                valores.push(registro.umidade);
+                labels.push(registro.data_hora);
+            }
+
+            const ctx = document.getElementById('myChartCanvas');
+            const config = {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Umidade',
+                        data: valores,
+                        borderWidth: 1,
+                        borderColor: '#FF6384',
+                        backgroundColor: '#FFB1C1',
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        }
+
+        async function obterDadosGrafico2() {
+            try {
+                let response = await fetch("/captura/capturar", { method: "GET" });
+                if (response.ok) {
+                    let json = await response.json();
+                    plotarGrafico2(json);
+                } else {
+                    let texto = await response.text();
+                    console.error("Houve um erro ao tentar realizar o obterDadosGrafico2!", texto);
+                }
+            } catch (erro) {
+                console.error(erro);
+            }
+        }
+
+        function plotarGrafico2(response) {
+            var labels = [];
+            var valores = [];
+
+            for (let index = 0; index < response.length; index++) {
+                var registro = response[index];
+                valores.push(registro.temperatura);
+                labels.push(registro.data_hora);
+            }
+
+            const ctx = document.getElementById('myChartCanvas2');
+            const config = {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Temperatura',
+                        data: valores,
+                        borderWidth: 1,
+                        borderColor: '#36A2EB',
+                        backgroundColor: '#9AD0F5',
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        }
+    </script>
+</body>
+
+</html>

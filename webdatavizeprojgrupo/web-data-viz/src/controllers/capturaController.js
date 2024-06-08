@@ -1,7 +1,11 @@
 var capturaModel = require("../models/capturaModel");
 
 function capturar(req, res) {
-  capturaModel.capturar().then(function (resultado) {
+  const limite_linhas = 10;
+
+  console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+
+  capturaModel.capturar(limite_linhas).then(function (resultado) {
     if (resultado.length > 0) {
         res.status(200).json(resultado);
     } else {

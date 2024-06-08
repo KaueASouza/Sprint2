@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #4d0000ab;
+    background-color: #f7bbbb60;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -137,10 +137,11 @@ h1 {
     align-items: center;
 }
 
-.father1{
+.father1 {
     margin-top: 20px;
-    
+
 }
+
 .son div {
     background-color: white;
     display: flex;
@@ -151,12 +152,14 @@ h1 {
 
     /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; ;  */
     border-radius: 15px;
-    
+
 }
-.son h3{
+
+.son h3 {
     padding: 10px 0;
 }
-.son img{
+
+.son img {
     width: 40%;
     margin: auto;
     /* display: flex;
@@ -169,9 +172,10 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 100px;
-    
+
 }
-.son p{
+
+.son p {
     padding: 10px 0;
 }
 
@@ -179,8 +183,9 @@ h1 {
     width: auto;
     align-self: center;
     display: flex;
-    
+
 }
+
 .child {
     width: 100%;
     height: 90%;
@@ -449,16 +454,41 @@ b {
 
 .low-temp {
     color: blue;
-  }
-  
-  .high-temp {
-    color: red;
-  }
+}
 
-  .low-humidity {
+.high-temp {
+    color: red;
+}
+
+.low-humidity {
     color: orange;
-  }
-  
-  .high-humidity {
+}
+
+.high-humidity {
     color: purple;
-  }
+}
+
+.graficoespecifico {
+    width: 50%;
+}
+
+.canva {
+    background-color: aliceblue;
+}
+
+.graficoespecifico {
+    margin: 10px;
+    width: 46%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 0px 1px 3px rgba(63, 0, 0, 0.788);
+}
+
+.englobagrafico {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+}
