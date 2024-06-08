@@ -6,11 +6,7 @@
 }
 
 body {
-<<<<<<< HEAD
-    background-color: #f7bbbb60;
-=======
     background-color: #3a0008;
->>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
@@ -151,31 +147,6 @@ h1 {
     align-items: center;
 }
 
-<<<<<<< HEAD
-.father1 {
-    margin-top: 20px;
-
-}
-
-.son div {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /* width: 30vw; */
-    height: auto;
-
-    /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; ;  */
-    border-radius: 15px;
-
-}
-
-.son h3 {
-    padding: 10px 0;
-}
-
-.son img {
-=======
 .father1{
     margin-top: 20px;   
 }
@@ -200,7 +171,6 @@ h1 {
 }
 
 .son img{
->>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
     width: 40%;
     margin: auto;
     /* display: flex;
@@ -213,28 +183,15 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 100px;
-<<<<<<< HEAD
-
-}
-
-.son p {
-=======
 }
 
 .son p{
->>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
     padding: 10px 0;
 }
 
 .son a {
     width: auto;
     align-self: center;
-<<<<<<< HEAD
-    display: flex;
-
-}
-
-=======
     display: flex
 }
 
@@ -242,7 +199,6 @@ h1 {
     border: none;
 }
 
->>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
 .child {
     width: 100%;
     height: 90%;
@@ -509,20 +465,19 @@ b {
 
 .low-temp {
     color: blue;
-}
-
-.high-temp {
+  }
+  
+  .high-temp {
     color: red;
-}
+  }
 
-.low-humidity {
+  .low-humidity {
     color: orange;
-}
-
-.high-humidity {
+  }
+  
+  .high-humidity {
     color: purple;
-}
-
+  }
 .graficoespecifico {
     width: 50%;
 }
