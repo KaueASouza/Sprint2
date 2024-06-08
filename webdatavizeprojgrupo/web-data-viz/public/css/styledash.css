@@ -2,14 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
 }
 
 body {
+<<<<<<< HEAD
     background-color: #f7bbbb60;
+=======
+    background-color: #3a0008;
+>>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
     width: 100vw;
     height: 100vh;
-    display: flex;
+    overflow-x: hidden;
 }
 
 a {
@@ -42,6 +46,9 @@ h1 {
 }  */
 
 .pai {
+    height: 100%;
+    width: 100vw;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,20 +61,23 @@ h1 {
 
 
 .header {
-    width: 100vw;
-    height: 8vh;
+    width: 100%;
+    height: 11vh;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     box-shadow: 30px 10px 110px rgba(105, 0, 0, 0.322);
-    padding: 25px 20px;
-    justify-content: space-around;
+    padding: 20px 100px 20px 0;
+    justify-content: end;
     margin: 0 0 2px;
-
-
 }
 
-
+.logoNav {
+    position: absolute;
+    width: 120px;
+    top: 30px;
+    left: 90px;
+}
 
 .navbar {
     list-style: none;
@@ -87,12 +97,13 @@ h1 {
 .navbar a {
     text-decoration: none;
     color: #5f0000;
+    font-size: 18px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #b66925;
+    color: #9f160b;
     /* Cor ao passar o mouse */
 }
 
@@ -104,6 +115,9 @@ h1 {
     margin-right: 20px;
 }
 
+.temp {
+    width: 100px;
+}
 
 .imagem {
     width: 57px;
@@ -137,6 +151,7 @@ h1 {
     align-items: center;
 }
 
+<<<<<<< HEAD
 .father1 {
     margin-top: 20px;
 
@@ -160,6 +175,32 @@ h1 {
 }
 
 .son img {
+=======
+.father1{
+    margin-top: 20px;   
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    color: black;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 7px 7px 15px rgb(88, 88, 88),
+                -7px -7px 15px rgb(122, 122, 122);
+}
+
+.son h3{
+    padding: 10px 0;
+}
+
+.son img{
+>>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
     width: 40%;
     margin: auto;
     /* display: flex;
@@ -172,20 +213,36 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 100px;
+<<<<<<< HEAD
 
 }
 
 .son p {
+=======
+}
+
+.son p{
+>>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
     padding: 10px 0;
 }
 
 .son a {
     width: auto;
     align-self: center;
+<<<<<<< HEAD
     display: flex;
 
 }
 
+=======
+    display: flex
+}
+
+.show {
+    border: none;
+}
+
+>>>>>>> a29fb4e4749591f68e818f586a1ff9b1ae4f4f68
 .child {
     width: 100%;
     height: 90%;
@@ -339,8 +396,6 @@ h1 {
     border-bottom: 3px solid #3a0008;
     /* Adiciona uma borda na parte inferior */
 }
-
-
 
 .grafico1 {
     width: 100%;
