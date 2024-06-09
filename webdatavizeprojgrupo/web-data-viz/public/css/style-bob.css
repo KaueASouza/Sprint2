@@ -100,11 +100,15 @@ button:hover {
 }
 
 #resposta {
+    height: 25%;
     width: 80%;
     color: white;
     text-align: start;
     display: none;
     padding: 0 60px 0 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
 }
 
 .blur {
@@ -117,4 +121,16 @@ button:hover {
     border-radius: 0 0 30% 30%;
     filter: blur(90px);
     z-index: -1;
+    }
+
+    .voltar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 72px 20px 10px 65px;
+    }
+    
+    .img2 {
+        width: 60%;
+        cursor: pointer;
     }
