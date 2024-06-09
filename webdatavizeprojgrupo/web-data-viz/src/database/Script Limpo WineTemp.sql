@@ -1,3 +1,4 @@
+-- drop database WineTemp;
 create database WineTemp;
 
 use WineTemp;
@@ -69,9 +70,9 @@ select idEmpresa as 'ID EMPRESA', nome as 'NOME DA EMPRESA', cnpj as 'CNPJ', nom
 
 desc usuario;
 
-/* insert into usuario values
+insert into usuario values
 (default, 1, 'Fernando Brandão', 'fernanado.brandao@sptech.school', 'brandao123'),
-(default, 2,'Roberto Almeida', 'roberto.almeida@sptech.school', '070381');*/
+(default, 2,'Roberto Almeida', 'roberto.almeida@sptech.school', '070381');
 
 select * from usuario;
 
@@ -165,3 +166,11 @@ join
 ('2024-05-05 09:20', 59, 17.0),
 ('2024-05-02 10:29', 58, 17.4),
 ('2024-05-05 21:10', 64, 15.3);
+
+INSERT INTO usuario (nome_usuario, email, senha , fkempresa) VALUES 
+('Rebeca Roque ', 'rebeca.n2@sptech.school', '12345678', '1'),
+('Kaue Souza ', 'kaue.n1@sptech.school', '12345678', '1'),
+('Luiz Gustavo Dantas ', 'luiz.n2@sptech.school', '12345678', '1'),
+('Pedro Porfirio ', 'pedro.n1@sptech.school', '12345678', '1'),
+('Marcelo Nunes ', 'marcelo.n3@sptech.school', '12345678', '1'),
+('Eduardo Facini ', 'eduardo.n3@sptech.school', '12345678', '1');
