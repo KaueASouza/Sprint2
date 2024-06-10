@@ -23,13 +23,34 @@
       </ul>
     </div>
   </div>
+
+  
+    <DIV class="medidas">
+      <div class="card-pequeno">
+        <p><b>Temperatura min:</b> 13ºC </p>
+    </div>
+
+    <div class="card-pequeno">
+        <p><b>Temperatura max:</b> 18º </p>
+    </div>
+
+    <div class="card-pequeno">
+        <p><b>Umidade min: </b> 55%  </p>
+    </div>
+
+    <div class="card-pequeno">
+        <p><b>Umidade max:  </b> 70% </p>
+    </div>
+  </DIV>
+  
+   
   <div class="pai">
     <div class="father1">
       <div class="son">
         <div class="card">
           <h3>Barril 1</h3>
-          <a href="./index1.html">
-            <img src="imgs/barril-vermelho.svg" alt="Barril 1">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 1">
           </a>
           <div id="barril1">
             <div>
@@ -39,64 +60,64 @@
         </div>
         <div class="card">
           <h3>Barril 2</h3>
-          <a href="./index2.html">
-            <img src="imgs/barril-vermelho.svg" alt="Barril 2">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 2">
           </a>
           <div id="barril2"></div>
         </div>
         <div class="card">
           <h3>Barril 3</h3>
-          <a href="./index3.html">
-            <img src="imgs/barril-vermelho.svg" alt="Barril 3">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 3">
           </a>
           <div id="barril3"></div>
         </div>
         <div class="card">
           <h3>Barril 4</h3>
-          <a href="./index4.html">
-            <img src="imgs/barril-amarelo.svg" alt="Barril 4">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 4">
           </a>
           <div id="barril4"></div> <!-- Corrigido aqui -->
         </div>
         <div class="card">
           <h3>Barril 5</h3>
-          <a href="./index5.html">
-            <img src="imgs/barril-amarelo.svg" alt="Barril 5">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 5">
           </a>
           <div id="barril5"></div>
         </div>
         <div class="card">
           <h3>Barril 6</h3>
-          <a href="./index6.html">
-            <img src="imgs/barril-amarelo.svg" alt="Barril 6">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 6">
           </a>
           <div id="barril6"></div>
         </div>
         <div class="card">
           <h3>Barril 7</h3>
-          <a href="./index7.html">
-            <img src="imgs/barril-verde.svg" alt="Barril 7">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 7">
           </a>
           <div id="barril7"></div>
         </div>
         <div class="card">
           <h3>Barril 8</h3>
-          <a href="./index8.html">
-            <img src="imgs/barril-verde.svg" alt="Barril 8">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 8">
           </a>
           <div id="barril8"></div>
         </div>
         <div class="card">
           <h3>Barril 9</h3>
-          <a href="./index9.html">
-            <img src="imgs/barril-verde.svg" alt="Barril 9">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 9">
           </a>
           <div id="barril9"></div>
         </div>
         <div class="card">
           <h3>Barril 10</h3>
-          <a href="./index10.html">
-            <img src="imgs/barril-verde.svg" alt="Barril 10">
+          <a href="dashEspecifica.html">
+            <img src="imgs/barril.png" alt="Barril 10">
           </a>
           <div id="barril10"></div>
         </div>
@@ -151,16 +172,20 @@
           tempElement.classList.remove('low-temp', 'high-temp');
           if (values.temperatura < 10) {
             tempElement.classList.add('low-temp');
+            
           } else if (values.temperatura > 18) {
             tempElement.classList.add('high-temp');
+           
           }
         }
         if (humidityElement) {
           humidityElement.classList.remove('low-humidity', 'high-humidity');
           if (values.umidade < 55) {
             humidityElement.classList.add('low-humidity');
+            
           } else if (values.umidade > 70) {
             humidityElement.classList.add('high-humidity');
+            
           }
         }
       }
@@ -172,7 +197,7 @@
         updateBarrel(`barril${i}`);
         setInterval(() => {
           updateBarrel(`barril${i}`);
-        }, 5000); // 1 minuto = 60000 milissegundos
+        }, 60000); // 1 minuto = 60000 milissegundos
       }
     }
   </script>

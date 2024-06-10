@@ -11,16 +11,22 @@
 </head>
 
 <body onload="iniciarAtualizacao();">
-    <div class="pai">
-        <div class="header">
-            <a href="dashboard.html"><img src="imgs/Logo.png" alt="Logo" class="logo"></a>
-            <div class="container1">
-                <ul class="navbar">
-                    <li><a href="Login.html">Sair</a></li>
-                    <li><a href="loginBobia.html">Suporte</a></li>
-                </ul>
-            </div>
+    <div class="header">
+        <a href="Login.html"><img src="imgs/Logo.png" alt="Logo" class="logoNav"></a>
+        <div class="container1">
+          <ul class="navbar">
+            <li><a href="loginBobia.html">Suporte</a></li>
+            <li><a href="dashboard.html">Voltar</a></li>
+            <li><a href="Login.html" onclick="limparSessao()">Sair</a></li>
+          </ul>
         </div>
+      </div>
+      <center>
+        <div class="aviso">
+            <p><b>Barril -</b> Umidade e Temperatura - Atualização de 2 em 2 minutos </p>
+        </div>
+      </center>
+
         <div class="englobagrafico">
             <div class="graficoespecifico">
                 <canvas id="myChartCanvas" class="canvas"></canvas>
@@ -35,10 +41,10 @@
     <script>
         function iniciarAtualizacao() {
             obterDadosGrafico().then(() => {
-                setInterval(obterDadosGrafico, 300000); // 5 minutos em milissegundos
+                setInterval(obterDadosGrafico, 120000); // 5 minutos em milissegundos
             });
             obterDadosGrafico2().then(() => {
-                setInterval(obterDadosGrafico2, 300000); // 5 minutos em milissegundos
+                setInterval(obterDadosGrafico2, 120000); // 5 minutos em milissegundos
             });
         }
 

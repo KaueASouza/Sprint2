@@ -190,16 +190,12 @@ h1 {
 .son a {
     width: auto;
     align-self: center;
-<<<<<<< HEAD
     display: flex
 }
 
 .show {
     border: none;
-=======
     display: flex;
-
->>>>>>> 5798b7071a1a8b6bc1f279b565ec81383ce4ff38
 }
 
 .child {
@@ -467,37 +463,24 @@ b {
     font: bolder;
     font-size: 20px;
     color: blue;
-<<<<<<< HEAD
+
   }
   
-  .high-temp {
-=======
-}
-
+ 
 .high-temp {
     font: bolder;
     font-size: 20px;
->>>>>>> 5798b7071a1a8b6bc1f279b565ec81383ce4ff38
     color: red;
   }
 
-<<<<<<< HEAD
+
   .low-humidity {
     color: orange;
   }
   
-  .high-humidity {
-=======
-.low-humidity {
-    font: bolder;
-    font-size: 20px;
-    color: orange;
-}
-
 .high-humidity {
     font: bolder;
     font-size: 20px;
->>>>>>> 5798b7071a1a8b6bc1f279b565ec81383ce4ff38
     color: purple;
   }
 .graficoespecifico {
@@ -523,4 +506,27 @@ b {
     padding: 10px;
     margin: 10px;
     justify-content: center;
+}
+
+.aviso {
+    margin: 10px;
+    width: 46%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 0px 1px 3px rgba(63, 0, 0, 0.788);
+}
+
+.medidas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.card-pequeno {
+    background-color: white;
+    width: 10%;
+    padding: 20px;
+    border: #350000 solid 2px;
 }
